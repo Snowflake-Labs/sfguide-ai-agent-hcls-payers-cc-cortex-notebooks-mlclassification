@@ -108,3 +108,61 @@ CREATE OR REPLACE STAGE CHATBOT_APP DIRECTORY=(ENABLE=true); --to store streamli
 
 -- -- make sure staged files can be seen by directory
 -- ALTER STAGE RAW_DATA REFRESH;
+
+-- -- create compute pool
+-- CREATE COMPUTE POOL IF NOT EXISTS PAYERS_GPU_POOL
+--         MIN_NODES = 1
+--         MAX_NODES = 5
+--         INSTANCE_FAMILY = GPU_NV_S;
+
+-- -- create network rules and external access integrations
+-- CREATE OR REPLACE NETWORK RULE PAYERS_CC_DB.PAYERS_CC_SCHEMA.allow_all_rule
+--           TYPE = HOST_PORT
+--           MODE = EGRESS
+--           VALUE_LIST = ('0.0.0.0:443','0.0.0.0:80');
+
+-- CREATE OR REPLACE EXTERNAL ACCESS INTEGRATION payers_allow_all_integration
+--         ALLOWED_NETWORK_RULES = (PAYERS_CC_DB.PAYERS_CC_SCHEMA.allow_all_rule)
+--         ENABLED = TRUE;
+
+-- CREATE OR REPLACE NETWORK RULE PAYERS_CC_DB.PAYERS_CC_SCHEMA.pipy_network_rule
+--           TYPE = HOST_PORT
+--           MODE = EGRESS
+--           VALUE_LIST = ('pypi.org', 'pypi.python.org', 'pythonhosted.org',  'files.pythonhosted.org');
+
+-- CREATE OR REPLACE EXTERNAL ACCESS INTEGRATION payers_pipy_access_integration
+--         ALLOWED_NETWORK_RULES = (PAYERS_CC_DB.PAYERS_CC_SCHEMA.pipy_network_rule)
+--         ENABLED = TRUE;
+
+-- -- create main setup notebook
+-- CREATE OR REPLACE NOTEBOOK PAYERS_CC_MAIN_SETUP
+-- FROM '@PAYERS_CC_DB.PAYERS_CC_SCHEMA.NOTEBOOK'
+-- MAIN_FILE = 'payer_setup.ipynb'
+-- QUERY_WAREHOUSE = 'PAYERS_CC_WH'
+-- COMPUTE_POOL='PAYERS_GPU_POOL'
+-- RUNTIME_NAME='SYSTEM$GPU_RUNTIME';
+
+-- ALTER NOTEBOOK PAYERS_CC_MAIN_SETUP ADD LIVE VERSION FROM LAST;
+-- ALTER NOTEBOOK PAYERS_CC_MAIN_SETUP set external_access_integrations = (
+-- "PAYERS_PIPY_ACCESS_INTEGRATION", 
+-- "PAYERS_ALLOW_ALL_INTEGRATION");
+
+-- -- create caller intent prediction notebook
+-- CREATE OR REPLACE NOTEBOOK PAYERS_CALLER_INTENT_PREDICTION
+-- FROM '@PAYERS_CC_DB.PAYERS_CC_SCHEMA.NOTEBOOK'
+-- MAIN_FILE = 'caller_intent_prep.ipynb'
+-- QUERY_WAREHOUSE = 'PAYERS_CC_WH';
+
+-- ALTER NOTEBOOK PAYERS_CALLER_INTENT_PREDICTION ADD LIVE VERSION FROM LAST;
+
+-- -- create streamlit app
+-- CREATE OR REPLACE STREAMLIT PAYERS_CC_CHATBOT
+-- ROOT_LOCATION = '@PAYERS_CC_DB.PAYERS_CC_SCHEMA.CHATBOT_APP'
+-- MAIN_FILE = 'payer_assistant.py'
+-- QUERY_WAREHOUSE = 'PAYERS_CC_WH'
+-- COMMENT = '{"origin":"sf_sit-is", "name":"payer_call_center_assistant_v2", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"streamlit"}}';
+
+-- -- create email integration for streamlit app
+-- CREATE OR REPLACE NOTIFICATION INTEGRATION payers_cc_email_int
+-- TYPE=EMAIL
+-- ENABLED=TRUE;
