@@ -1,0 +1,1001 @@
+MEMBER_ID,RECENT_ENROLLMENT_EVENT_IND,PCP_CHANGE_IND,ACTIVE_CM_PROGRAM_IND,CHRONIC_CONDITION_IND,ACTIVE_GRIEVANCE_IND,ACTIVE_CLAIM_IND,POTENTIAL_CALLER_INTENT_CATEGORY
+QA227680402,1,1,1,1,0,1,Active Claim
+OT453914781,0,1,1,0,0,1,Active Claim
+NW190156218,1,1,1,0,0,1,Active Claim
+EY746721730,1,0,0,1,0,1,Active Claim
+TF499661956,1,1,1,1,0,1,Active Claim
+FD571247952,0,1,1,0,0,1,Active Claim
+PA268507857,1,1,0,0,0,1,Active Claim
+AQ773042819,0,1,0,1,0,1,Active Claim
+TL068469072,1,1,1,1,0,1,Active Claim
+ZX789728212,0,1,0,1,0,1,Active Claim
+ZZ837054665,0,1,1,1,0,1,Active Claim
+YL634144087,1,1,0,1,0,1,Active Claim
+IL080886545,0,1,1,0,0,1,Active Claim
+NZ230486458,1,0,1,1,0,1,Active Claim
+DR091031647,0,0,1,1,0,1,Active Claim
+XL930981819,1,0,0,0,0,1,Active Claim
+XO735325409,0,1,1,1,0,1,Active Claim
+KX371975904,1,1,1,1,0,1,Active Claim
+ON519259598,0,0,1,0,0,1,Active Claim
+IT717719577,1,1,1,1,0,1,Active Claim
+JM532157250,1,0,1,0,0,1,Active Claim
+AB941983041,1,1,1,1,0,1,Active Claim
+BZ579916289,0,0,1,0,0,1,Active Claim
+RS302637704,0,0,1,1,0,1,Active Claim
+WW826541466,1,1,0,1,0,1,Active Claim
+UP667692430,0,0,1,1,0,1,Active Claim
+YB858320812,0,0,0,1,0,1,Active Claim
+BL275177144,0,1,0,0,0,1,Active Claim
+AA728315300,1,1,1,1,0,1,Active Claim
+QF623696956,0,0,1,0,0,1,Active Claim
+UE543863296,0,0,0,1,0,1,Active Claim
+SN882516368,1,1,1,1,0,1,Active Claim
+GW432674743,1,0,1,1,0,1,Active Claim
+SO538294401,1,1,0,0,0,1,Active Claim
+ZF561736478,1,1,0,1,0,1,Active Claim
+HE890704486,1,1,1,1,0,1,Active Claim
+CI359818944,1,1,1,1,0,1,Active Claim
+RU840434176,1,0,1,1,0,1,Active Claim
+IV574752609,0,1,1,0,0,1,Active Claim
+EZ610074490,0,0,0,1,0,1,Active Claim
+FL047729500,0,1,1,1,0,1,Active Claim
+QU303745474,1,1,1,1,0,1,Active Claim
+PF361568001,1,1,1,1,0,1,Active Claim
+RX598624969,0,1,1,1,0,1,Active Claim
+EX032268410,1,1,1,0,0,1,Active Claim
+TA478473468,1,1,1,1,0,1,Active Claim
+YW830890407,1,1,1,0,1,0,Active Grievance
+YW142403927,1,0,1,1,1,1,Active Grievance
+TB499022988,1,0,1,1,1,0,Active Grievance
+DD387882217,0,0,0,1,1,0,Active Grievance
+PR442497105,1,0,1,1,1,0,Active Grievance
+LX573316888,1,1,1,1,1,0,Active Grievance
+NV587422675,1,1,0,1,1,1,Active Grievance
+QR945698013,0,0,1,1,1,1,Active Grievance
+SH985433945,1,1,0,1,1,1,Active Grievance
+AD890726303,0,1,0,1,1,1,Active Grievance
+UX614356428,0,0,1,1,1,1,Active Grievance
+BA912533965,0,1,0,1,1,1,Active Grievance
+DD216007231,1,0,1,1,1,0,Active Grievance
+II958170044,1,1,1,1,1,1,Active Grievance
+TH144152563,0,1,1,1,1,1,Active Grievance
+IR617056317,0,0,1,1,1,0,Active Grievance
+TU229791654,0,1,0,0,1,1,Active Grievance
+CV827291492,0,0,1,1,1,1,Active Grievance
+LC683305887,1,1,1,1,1,0,Active Grievance
+YN201926606,0,1,0,1,1,0,Active Grievance
+YU227342425,1,0,1,1,1,0,Active Grievance
+CU059498419,1,1,0,0,1,0,Active Grievance
+YA871782026,1,1,1,1,1,1,Active Grievance
+FF525937477,1,0,1,0,1,1,Active Grievance
+CN028840098,1,1,0,0,1,1,Active Grievance
+CW661921159,0,1,1,0,1,0,Active Grievance
+HB894145599,1,1,0,0,1,1,Active Grievance
+XI851602504,0,0,1,1,1,1,Active Grievance
+MU197204238,0,1,0,1,1,0,Active Grievance
+LU002138109,1,0,1,1,1,1,Active Grievance
+SG220581342,1,1,0,1,1,0,Active Grievance
+GQ333104285,0,1,0,1,1,0,Active Grievance
+KN848409759,1,0,1,0,1,1,Active Grievance
+FB003134396,1,0,1,0,1,1,Active Grievance
+RD057122924,0,0,0,1,1,0,Active Grievance
+WN664746618,1,1,0,1,1,1,Active Grievance
+JV045043970,1,0,0,0,1,1,Active Grievance
+JB245646717,1,0,1,1,1,1,Active Grievance
+BB279610725,0,1,0,0,1,0,Active Grievance
+SS034769072,0,0,0,1,1,0,Active Grievance
+LC579769714,1,0,1,1,1,1,Active Grievance
+WQ908105350,0,0,1,0,1,0,Active Grievance
+SV926442415,1,0,1,1,1,1,Active Grievance
+VP195857069,0,0,0,1,1,1,Active Grievance
+JP776014282,1,0,1,1,1,1,Active Grievance
+IO671900194,1,1,1,1,1,0,Active Grievance
+TM041865342,1,1,1,1,1,1,Active Grievance
+HG624835941,1,0,0,1,1,0,Active Grievance
+UZ473890704,0,1,1,0,1,0,Active Grievance
+LF631844261,1,1,1,1,1,1,Active Grievance
+NS236092480,1,0,0,0,1,1,Active Grievance
+CF512316595,1,1,1,1,1,0,Active Grievance
+XV052186039,0,1,1,1,1,1,Active Grievance
+IS519919935,1,1,0,1,1,0,Active Grievance
+YH711762522,1,1,1,1,1,1,Active Grievance
+YF622194668,1,0,0,1,1,0,Active Grievance
+RU839209685,1,0,0,1,1,1,Active Grievance
+SL750965040,0,0,1,1,1,0,Active Grievance
+LH733590538,0,0,1,1,1,0,Active Grievance
+BZ236154614,1,0,0,1,1,1,Active Grievance
+SX559448775,1,1,0,1,1,1,Active Grievance
+XV068081560,1,1,1,1,1,1,Active Grievance
+YP014967302,0,0,1,1,1,1,Active Grievance
+XN403458458,1,0,0,0,1,1,Active Grievance
+YE955628979,1,0,1,0,1,1,Active Grievance
+MQ844621290,1,0,1,0,1,0,Active Grievance
+XT732107797,0,0,1,0,0,0,Active Cm Program
+NR830825905,0,1,1,0,0,0,Active Cm Program
+OK249568730,1,0,1,1,0,0,Active Cm Program
+SV995956048,1,1,1,1,0,0,Active Cm Program
+AH439281045,1,0,1,0,0,0,Active Cm Program
+CH711595982,0,1,1,0,0,0,Active Cm Program
+DF676174774,1,0,1,1,0,0,Active Cm Program
+UD286174002,1,1,1,0,0,0,Active Cm Program
+NG146246090,1,1,1,1,0,0,Active Cm Program
+ID387839449,1,1,1,1,0,0,Active Cm Program
+LS964670645,1,1,1,0,0,0,Active Cm Program
+CG141098499,0,0,1,1,0,0,Active Cm Program
+ZR193739715,1,1,1,1,0,0,Active Cm Program
+JU766612529,0,0,1,1,0,0,Active Cm Program
+JH971847802,1,0,1,1,0,0,Active Cm Program
+RU341374837,0,1,1,1,0,0,Active Cm Program
+FZ170792780,1,1,1,0,0,0,Active Cm Program
+FT801813428,0,1,1,1,0,0,Active Cm Program
+HP011316541,1,1,1,1,0,0,Active Cm Program
+TT424762802,1,1,1,1,0,0,Active Cm Program
+WU398432518,0,0,1,0,0,0,Active Cm Program
+FR161926239,1,1,1,1,0,0,Active Cm Program
+ZD202848475,1,1,1,1,0,0,Active Cm Program
+HV198550171,0,0,1,1,0,0,Active Cm Program
+OB211856879,1,1,1,1,0,0,Active Cm Program
+QV299033324,0,1,1,1,0,0,Active Cm Program
+OZ866240770,1,1,1,1,0,0,Active Cm Program
+ER524775998,1,0,1,1,0,0,Active Cm Program
+XR181663846,0,1,1,1,0,0,Active Cm Program
+FL909710221,1,1,1,1,0,0,Active Cm Program
+YN175666369,0,0,1,1,0,0,Active Cm Program
+JM237688423,1,1,1,1,0,0,Active Cm Program
+ZX849922507,0,1,1,1,0,0,Active Cm Program
+CR239917751,1,1,1,1,0,0,Active Cm Program
+QQ053536169,0,1,1,1,0,0,Active Cm Program
+LD081378109,0,0,1,1,0,0,Active Cm Program
+UN480953755,0,1,1,1,0,0,Active Cm Program
+DA563019126,1,1,1,0,0,0,Active Cm Program
+HN130205791,0,1,1,0,0,0,Active Cm Program
+RH119515529,1,1,1,1,0,0,Active Cm Program
+ZP658809905,1,1,1,1,0,0,Active Cm Program
+CT832448194,1,1,1,1,0,0,Active Cm Program
+KB975438604,1,1,1,1,0,0,Active Cm Program
+SR120312150,0,1,1,1,0,0,Active Cm Program
+LC065292054,0,0,1,1,0,0,Active Cm Program
+CK945771135,0,1,1,0,0,0,Active Cm Program
+CA441065490,1,0,1,1,0,0,Active Cm Program
+LY133221911,1,1,1,1,0,0,Active Cm Program
+JJ320419026,1,0,0,0,0,0,Recent Enrollment Event
+TE223685290,1,0,0,1,0,0,Recent Enrollment Event
+BY002862419,1,0,0,1,0,0,Recent Enrollment Event
+SH090747664,1,0,0,0,0,0,Recent Enrollment Event
+HP450907620,1,0,0,1,0,0,Recent Enrollment Event
+CR593311846,1,0,0,0,0,0,Recent Enrollment Event
+WN490446490,1,0,0,1,0,0,Recent Enrollment Event
+PO313678796,1,0,0,1,0,0,Recent Enrollment Event
+EZ127557568,1,0,0,1,0,0,Recent Enrollment Event
+IB581746680,1,0,0,1,0,0,Recent Enrollment Event
+NM540314388,1,0,0,1,0,0,Recent Enrollment Event
+DZ295578289,1,0,0,1,0,0,Recent Enrollment Event
+CS126681775,1,0,0,1,0,0,Recent Enrollment Event
+GB237133094,1,0,0,1,0,0,Recent Enrollment Event
+AK775925612,1,0,0,0,0,0,Recent Enrollment Event
+PO437553014,1,0,0,1,0,0,Recent Enrollment Event
+MF356447415,1,0,0,1,0,0,Recent Enrollment Event
+DW642081323,1,0,0,1,0,0,Recent Enrollment Event
+IH027511445,1,0,0,0,0,0,Recent Enrollment Event
+TJ573519889,1,0,0,1,0,0,Recent Enrollment Event
+IA597889393,1,0,0,1,0,0,Recent Enrollment Event
+FP136179939,1,0,0,1,0,0,Recent Enrollment Event
+CN683662109,1,0,0,1,0,0,Recent Enrollment Event
+ND773676501,1,0,0,1,0,0,Recent Enrollment Event
+XA163892733,1,0,0,1,0,0,Recent Enrollment Event
+BX371270575,1,0,0,1,0,0,Recent Enrollment Event
+FE788994520,1,0,0,0,0,0,Recent Enrollment Event
+OJ340227481,1,0,0,0,0,0,Recent Enrollment Event
+QS886857202,1,0,0,1,0,0,Recent Enrollment Event
+IP252463427,1,0,0,0,0,0,Recent Enrollment Event
+OA370216832,1,0,0,1,0,0,Recent Enrollment Event
+SE566556335,1,0,0,0,0,0,Recent Enrollment Event
+NG101144743,1,0,0,0,0,0,Recent Enrollment Event
+WQ363098167,1,0,0,1,0,0,Recent Enrollment Event
+FI798955504,1,0,0,1,0,0,Recent Enrollment Event
+EV659537500,1,0,0,1,0,0,Recent Enrollment Event
+NS945019570,1,0,0,0,0,0,Recent Enrollment Event
+QC515853304,1,0,0,0,0,0,Recent Enrollment Event
+VB418342205,1,0,0,1,0,0,Recent Enrollment Event
+ME679006187,1,0,0,1,0,0,Recent Enrollment Event
+QR433178097,1,0,0,1,0,0,Recent Enrollment Event
+QB215787642,1,0,0,0,0,0,Recent Enrollment Event
+DB726227697,1,0,0,1,0,0,Recent Enrollment Event
+KJ671580280,1,0,0,1,0,0,Recent Enrollment Event
+YC476103168,1,0,0,1,0,0,Recent Enrollment Event
+UQ619808495,1,0,0,0,0,0,Recent Enrollment Event
+BJ403675713,1,0,0,1,0,0,Recent Enrollment Event
+YC264856295,1,0,0,1,0,0,Recent Enrollment Event
+EB381124932,1,0,0,1,0,0,Recent Enrollment Event
+SU491103614,1,0,0,1,0,0,Recent Enrollment Event
+JE572505021,1,0,0,0,0,0,Recent Enrollment Event
+RS606524296,1,1,0,1,0,0,Pcp Change
+QL512352206,1,1,0,0,0,0,Pcp Change
+EC444769043,1,1,0,0,0,0,Pcp Change
+SB661786197,1,1,0,0,0,0,Pcp Change
+QQ974853292,1,1,0,1,0,0,Pcp Change
+EP710783720,1,1,0,1,0,0,Pcp Change
+ZG384349397,0,1,0,1,0,0,Pcp Change
+RW584848373,1,1,0,1,0,0,Pcp Change
+ZV660982173,1,1,0,0,0,0,Pcp Change
+GL451324357,1,1,0,0,0,0,Pcp Change
+JT553621743,1,1,0,1,0,0,Pcp Change
+BK744451304,1,1,0,1,0,0,Pcp Change
+UG256085632,1,1,0,1,0,0,Pcp Change
+OT188850611,0,1,0,0,0,0,Pcp Change
+BD345873192,1,1,0,0,0,0,Pcp Change
+VT657553918,1,1,0,1,0,0,Pcp Change
+US387503099,0,1,0,0,0,0,Pcp Change
+GS053666440,1,1,0,1,0,0,Pcp Change
+VG334592686,0,1,0,1,0,0,Pcp Change
+KV384486536,1,1,0,0,0,0,Pcp Change
+WK097859126,1,1,0,0,0,0,Pcp Change
+TR452446805,1,1,0,0,0,0,Pcp Change
+CC753931205,0,1,0,0,0,0,Pcp Change
+KH774465100,0,1,0,1,0,0,Pcp Change
+ZL824612877,0,1,0,1,0,0,Pcp Change
+PD817111112,0,1,0,1,0,0,Pcp Change
+CX454676887,1,1,0,1,0,0,Pcp Change
+EY347714985,1,1,0,1,0,0,Pcp Change
+QQ757091730,1,1,0,1,0,0,Pcp Change
+ZR711558179,1,1,0,0,0,0,Pcp Change
+PV643164564,1,1,0,0,0,0,Pcp Change
+MJ829694178,1,1,0,0,0,0,Pcp Change
+MA422034531,1,1,0,0,0,0,Pcp Change
+RR172463970,1,1,0,0,0,0,Pcp Change
+LJ393374765,1,1,0,1,0,0,Pcp Change
+UD154616720,1,1,0,1,0,0,Pcp Change
+QZ663952026,1,1,0,1,0,0,Pcp Change
+CL353759337,1,1,0,1,0,0,Pcp Change
+AI374265985,1,1,0,1,0,0,Pcp Change
+EG517631800,0,1,0,0,0,0,Pcp Change
+MR554583723,0,1,0,1,0,0,Pcp Change
+LK033452874,1,1,0,1,0,0,Pcp Change
+RH660580534,0,1,0,1,0,0,Pcp Change
+BV461941460,1,1,0,1,0,0,Pcp Change
+SH752764464,1,1,0,0,0,0,Pcp Change
+ER781433754,1,1,1,1,0,1,Active Claim
+VY268899702,1,0,0,1,0,1,Active Claim
+PV696725393,1,1,0,1,0,1,Active Claim
+AW894487888,1,1,1,1,0,1,Active Claim
+LE749596410,1,1,0,1,0,1,Active Claim
+LM042283318,0,0,0,1,0,1,Active Claim
+YR091720182,1,1,1,1,0,1,Active Claim
+GM988520540,1,0,1,1,0,1,Active Claim
+KS427034973,0,1,1,1,0,1,Active Claim
+XA637193286,0,0,0,0,0,1,Active Claim
+UX533903439,0,1,1,1,0,1,Active Claim
+PG354400693,0,1,1,0,0,1,Active Claim
+EK823963348,0,1,1,1,0,1,Active Claim
+SM847393827,0,1,0,1,0,1,Active Claim
+IR888242063,0,0,1,0,0,1,Active Claim
+IJ081314051,0,1,1,1,0,1,Active Claim
+EG739011814,1,1,1,1,0,1,Active Claim
+WU148594227,0,0,1,1,0,1,Active Claim
+JU496739752,1,1,1,1,0,1,Active Claim
+ZK415569372,0,0,1,0,0,1,Active Claim
+DW728106429,1,1,1,1,0,1,Active Claim
+PT057439230,1,1,1,1,0,1,Active Claim
+QR327002503,1,1,1,0,0,1,Active Claim
+AY263398951,1,1,1,1,0,1,Active Claim
+OV686461861,1,1,1,1,0,1,Active Claim
+SU273396346,0,1,1,1,0,1,Active Claim
+BO895306149,1,1,1,0,0,1,Active Claim
+YX738272076,0,0,0,0,0,1,Active Claim
+RV840003654,0,1,0,1,0,1,Active Claim
+NP328073900,1,0,1,1,0,1,Active Claim
+OX379239649,1,1,1,1,0,1,Active Claim
+RP731451481,0,1,0,0,0,1,Active Claim
+BY874283312,1,0,0,0,0,1,Active Claim
+WA601396218,1,0,0,0,0,1,Active Claim
+LG042604285,1,1,0,0,0,1,Active Claim
+BF598372134,0,0,1,1,0,1,Active Claim
+RE951594662,1,0,1,1,0,1,Active Claim
+XQ112436423,1,1,1,0,0,1,Active Claim
+NR066404718,1,0,0,1,0,1,Active Claim
+CY740926884,0,1,1,1,0,1,Active Claim
+KN437985769,1,1,0,1,0,1,Active Claim
+UC875773612,1,1,1,1,0,1,Active Claim
+RQ264065018,0,1,1,1,0,1,Active Claim
+HB762750714,0,0,0,1,0,1,Active Claim
+SW283924049,0,1,1,0,0,1,Active Claim
+IQ782817634,0,1,1,0,0,1,Active Claim
+YE550381607,1,1,0,0,0,1,Active Claim
+NE797622827,0,0,0,1,0,1,Active Claim
+AK060437476,0,1,1,1,0,1,Active Claim
+AA035870508,0,1,1,1,0,1,Active Claim
+XY841386949,1,1,0,1,0,1,Active Claim
+SH159145615,1,0,0,1,0,1,Active Claim
+LC519670393,1,1,0,1,0,1,Active Claim
+RH104907468,1,1,1,0,0,1,Active Claim
+OB072248028,1,1,1,0,0,1,Active Claim
+CS794729037,1,1,0,0,0,1,Active Claim
+YQ056492123,1,1,0,1,0,1,Active Claim
+WP478911196,1,1,1,1,0,1,Active Claim
+MC431179001,1,1,1,1,0,1,Active Claim
+OH211267030,1,1,0,1,0,1,Active Claim
+VM228061481,1,1,1,0,0,1,Active Claim
+MV523675589,0,1,1,0,0,1,Active Claim
+HV545976360,1,0,0,0,0,1,Active Claim
+UT217358554,1,1,1,0,0,1,Active Claim
+VN496087487,1,1,1,0,0,1,Active Claim
+QO860271985,1,1,1,1,0,1,Active Claim
+RD295678012,1,0,1,1,0,1,Active Claim
+RZ417202949,1,1,1,1,0,1,Active Claim
+OR608824305,1,0,0,1,0,1,Active Claim
+EE771214621,0,0,1,1,0,1,Active Claim
+QC746930006,0,0,1,0,0,1,Active Claim
+BK263629900,1,1,0,0,0,1,Active Claim
+SL481092064,1,1,0,0,0,1,Active Claim
+HZ174062371,1,1,1,1,0,1,Active Claim
+OI345057246,0,0,0,1,0,1,Active Claim
+DN190635316,1,1,1,1,0,1,Active Claim
+MG383677220,1,0,0,1,0,1,Active Claim
+UW003026511,1,1,0,1,0,1,Active Claim
+US247189792,1,0,1,1,0,1,Active Claim
+IK467828295,0,1,0,1,0,1,Active Claim
+XU800923057,1,0,0,0,0,1,Active Claim
+FL119553718,0,0,0,1,0,1,Active Claim
+SW000399574,0,1,1,1,0,1,Active Claim
+VM000171287,1,1,1,1,0,1,Active Claim
+WS127839025,1,1,1,1,0,1,Active Claim
+NL381991166,1,0,0,1,0,1,Active Claim
+CN044786138,1,1,0,1,0,1,Active Claim
+FD841153770,1,0,1,1,0,1,Active Claim
+UJ403569059,1,1,1,1,0,1,Active Claim
+HX530897343,1,1,1,1,0,1,Active Claim
+UX476809619,0,0,1,1,0,1,Active Claim
+RJ470593409,1,1,1,0,0,1,Active Claim
+UZ143743556,1,1,1,1,0,1,Active Claim
+NS532115303,1,1,0,1,0,1,Active Claim
+AA358307200,0,1,0,1,0,1,Active Claim
+TG510811166,1,0,0,0,0,1,Active Claim
+XC314444815,1,1,0,1,0,1,Active Claim
+NU179958808,1,1,1,1,0,1,Active Claim
+NQ899771425,1,1,1,1,0,1,Active Claim
+DX635552634,1,1,1,0,0,1,Active Claim
+JR160077726,1,0,1,0,1,1,Active Grievance
+TY212248056,1,1,0,1,1,0,Active Grievance
+OC277615494,1,0,0,1,1,0,Active Grievance
+EE434074239,0,0,1,0,1,0,Active Grievance
+VW108115285,0,1,0,1,1,1,Active Grievance
+XP303143260,0,1,1,1,1,1,Active Grievance
+BK737748398,1,1,1,1,1,1,Active Grievance
+MW138129708,1,1,1,0,1,1,Active Grievance
+NO253360852,0,0,1,1,1,0,Active Grievance
+LO032757968,1,0,1,1,1,0,Active Grievance
+JC780084435,1,1,1,1,1,1,Active Grievance
+VM138455974,0,1,1,1,1,1,Active Grievance
+IB642010673,1,0,1,1,1,0,Active Grievance
+EA727848640,1,0,1,0,1,1,Active Grievance
+ZR257340629,1,1,1,1,1,0,Active Grievance
+QZ726329391,1,1,1,1,1,0,Active Grievance
+RR388317604,1,0,1,0,1,0,Active Grievance
+SH809666804,0,1,0,1,1,0,Active Grievance
+JK800351469,1,1,0,1,1,0,Active Grievance
+JJ592061573,1,0,0,0,1,0,Active Grievance
+CB021338627,0,0,0,0,1,1,Active Grievance
+VT069982722,0,0,0,1,1,0,Active Grievance
+NE841154098,0,1,1,1,1,1,Active Grievance
+JT830193740,1,1,1,1,1,1,Active Grievance
+IE628781141,1,1,1,1,1,1,Active Grievance
+IU074872732,0,1,1,1,1,0,Active Grievance
+BF612058920,1,1,1,1,1,1,Active Grievance
+VY630331467,1,1,1,1,1,0,Active Grievance
+YV030834646,1,0,0,0,1,0,Active Grievance
+DR510838226,1,0,0,1,1,0,Active Grievance
+IR973526183,1,1,1,1,1,1,Active Grievance
+RU584526761,0,1,1,1,1,1,Active Grievance
+NS926037860,0,1,1,1,1,1,Active Grievance
+XS469777727,1,0,1,1,1,1,Active Grievance
+JL381103791,0,0,0,1,1,1,Active Grievance
+BL013972810,0,1,1,0,1,1,Active Grievance
+FS015288998,1,1,0,0,1,1,Active Grievance
+BZ184550455,1,1,1,0,1,1,Active Grievance
+TA031089172,1,1,0,1,1,0,Active Grievance
+FC068025057,1,1,1,0,1,1,Active Grievance
+TE957693733,1,1,1,0,1,0,Active Grievance
+MJ246645630,1,0,1,1,1,1,Active Grievance
+FW634581119,0,1,1,0,1,1,Active Grievance
+FE693333814,1,1,1,1,1,1,Active Grievance
+GM935274531,1,1,1,0,1,0,Active Grievance
+VQ645360105,1,1,1,1,1,1,Active Grievance
+DI034785365,1,0,0,1,1,1,Active Grievance
+WE933592157,1,0,1,1,1,0,Active Grievance
+DQ514627457,1,1,0,1,1,1,Active Grievance
+QD601068507,0,0,0,1,1,1,Active Grievance
+PS066623598,0,1,1,1,1,1,Active Grievance
+DM316774844,1,0,0,1,1,0,Active Grievance
+KA677536375,0,1,1,1,1,0,Active Grievance
+BL184753242,1,1,1,0,1,1,Active Grievance
+HQ425601722,1,0,1,0,1,1,Active Grievance
+YV785476543,0,0,0,1,1,0,Active Grievance
+VA233565410,1,0,0,0,1,0,Active Grievance
+OK772793539,1,1,1,1,1,0,Active Grievance
+IH824269795,0,0,0,0,1,1,Active Grievance
+HO349943941,0,1,1,1,1,0,Active Grievance
+MR926313116,0,0,1,1,1,1,Active Grievance
+CG347490669,1,1,1,1,1,0,Active Grievance
+TV855543565,1,1,1,1,1,1,Active Grievance
+KF380197171,0,1,1,1,1,1,Active Grievance
+WR341199781,0,1,1,1,1,0,Active Grievance
+XB355108091,1,1,0,1,1,1,Active Grievance
+XC458677219,0,0,1,0,1,0,Active Grievance
+GN197543867,0,0,0,1,1,1,Active Grievance
+OW915630673,0,1,0,0,1,0,Active Grievance
+VA973047683,1,1,0,1,1,0,Active Grievance
+RE314875846,0,0,1,1,1,1,Active Grievance
+CN635553523,0,1,1,1,1,1,Active Grievance
+SN093595675,0,1,1,1,1,0,Active Grievance
+DN316199830,1,0,0,0,1,0,Active Grievance
+KK743333722,1,1,0,1,1,1,Active Grievance
+JJ106895189,1,0,1,1,1,1,Active Grievance
+YC670841812,0,1,1,1,1,0,Active Grievance
+CL689880172,1,1,1,1,1,0,Active Grievance
+PW450928511,1,1,1,1,1,1,Active Grievance
+PD542496336,1,1,0,1,1,1,Active Grievance
+PH085523782,1,1,1,1,1,1,Active Grievance
+PH530034183,1,1,1,0,1,0,Active Grievance
+PQ541087825,1,0,0,1,1,0,Active Grievance
+GN321347743,0,1,0,0,1,1,Active Grievance
+DQ978911748,1,1,1,1,1,0,Active Grievance
+LM163517314,0,0,1,1,1,1,Active Grievance
+LO683991367,1,1,0,1,1,1,Active Grievance
+KF454604030,1,0,1,1,1,1,Active Grievance
+PA819881440,1,0,1,1,1,1,Active Grievance
+JF204870693,0,1,0,1,1,1,Active Grievance
+BP457770226,1,0,0,1,1,1,Active Grievance
+QO258153288,1,1,0,0,1,1,Active Grievance
+XX206488428,0,1,0,0,1,1,Active Grievance
+CU275753151,1,1,0,1,1,1,Active Grievance
+CH850980335,0,1,1,1,1,1,Active Grievance
+UP874565759,0,1,0,1,1,1,Active Grievance
+RY781812083,0,1,1,1,1,1,Active Grievance
+IQ083382803,1,1,0,1,1,1,Active Grievance
+EV401044617,1,0,1,1,1,1,Active Grievance
+UJ076024856,0,0,0,0,1,1,Active Grievance
+NQ632087178,1,1,0,1,1,1,Active Grievance
+VE261223020,0,1,0,1,1,0,Active Grievance
+LZ750748998,1,1,0,1,1,0,Active Grievance
+CE283851548,0,1,0,0,1,1,Active Grievance
+SL284559468,1,0,0,1,1,1,Active Grievance
+TU339187315,0,1,0,1,1,1,Active Grievance
+QQ036284530,0,0,0,1,1,0,Active Grievance
+HP715082084,0,1,0,1,1,0,Active Grievance
+CN594354747,0,1,1,1,1,0,Active Grievance
+SR595652183,1,1,1,0,1,1,Active Grievance
+JG935138266,1,1,1,0,1,1,Active Grievance
+NS520823343,1,1,1,1,1,0,Active Grievance
+EI657972781,0,1,0,0,1,0,Active Grievance
+GA101682489,0,0,0,1,1,1,Active Grievance
+HA290706582,0,0,1,1,1,0,Active Grievance
+JO243022042,0,0,1,0,1,1,Active Grievance
+QX695658293,1,1,0,1,1,1,Active Grievance
+GJ040563155,1,1,0,1,1,0,Active Grievance
+FS506786251,0,1,0,0,1,1,Active Grievance
+QP125199643,0,1,1,1,1,1,Active Grievance
+JW658109509,1,0,1,1,1,0,Active Grievance
+GT839408947,1,0,1,1,1,1,Active Grievance
+PL834080411,1,1,0,1,1,1,Active Grievance
+HP932043813,1,1,1,1,1,1,Active Grievance
+FD926994795,1,1,0,1,1,0,Active Grievance
+ND540301145,1,0,1,1,1,1,Active Grievance
+FH199190029,1,0,0,1,1,1,Active Grievance
+FY029526310,0,1,1,1,1,0,Active Grievance
+YC533327264,1,1,1,1,1,1,Active Grievance
+VC927697953,1,1,1,0,1,0,Active Grievance
+NZ094670148,1,1,1,1,1,0,Active Grievance
+VF001338858,1,0,0,1,1,1,Active Grievance
+QE730189330,1,1,1,1,1,1,Active Grievance
+RL455980833,0,1,1,1,1,1,Active Grievance
+OO339442329,0,1,0,1,1,0,Active Grievance
+KY702322213,1,0,1,1,1,0,Active Grievance
+TB990884679,1,1,1,0,1,1,Active Grievance
+LX055553201,1,1,0,1,1,0,Active Grievance
+EP138940536,1,1,1,0,1,1,Active Grievance
+VQ656036144,0,1,1,0,1,0,Active Grievance
+PW539774840,1,0,1,0,1,1,Active Grievance
+OP362365405,0,0,1,0,1,1,Active Grievance
+NG570851604,0,1,1,1,1,0,Active Grievance
+BF677458560,1,0,1,1,1,0,Active Grievance
+JY130474626,0,1,0,0,0,0,Pcp Change
+UH775602273,0,1,0,1,0,0,Pcp Change
+HL941198520,0,1,0,1,0,0,Pcp Change
+MQ936633101,1,1,0,0,0,0,Pcp Change
+PV612798677,1,1,0,1,0,0,Pcp Change
+PC097979768,0,1,0,1,0,0,Pcp Change
+NS401591813,1,1,0,1,0,0,Pcp Change
+WF244010507,1,1,0,1,0,0,Pcp Change
+FF973669535,1,1,0,1,0,0,Pcp Change
+YJ510435464,1,1,0,1,0,0,Pcp Change
+FG481157068,0,1,0,0,0,0,Pcp Change
+LG221351951,0,1,0,0,0,0,Pcp Change
+DD215809535,0,1,0,1,0,0,Pcp Change
+ZJ520821289,1,1,0,0,0,0,Pcp Change
+DU209297158,0,1,0,1,0,0,Pcp Change
+YV311015726,1,1,0,1,0,0,Pcp Change
+QA372206895,0,1,0,1,0,0,Pcp Change
+HM252500518,1,1,0,0,0,0,Pcp Change
+SB091633774,1,1,0,1,0,0,Pcp Change
+RG445583545,0,1,0,1,0,0,Pcp Change
+WO895741959,0,1,0,1,0,0,Pcp Change
+FO970879220,1,1,0,1,0,0,Pcp Change
+LH698981664,0,1,0,0,0,0,Pcp Change
+CL650790371,1,1,0,0,0,0,Pcp Change
+RQ813395052,1,1,0,1,0,0,Pcp Change
+FV112558734,0,1,0,1,0,0,Pcp Change
+PN446692002,1,1,0,0,0,0,Pcp Change
+WL143974444,0,1,0,1,0,0,Pcp Change
+BV164758029,1,1,0,1,0,0,Pcp Change
+QE679862018,1,1,0,1,0,0,Pcp Change
+HD350664931,1,1,0,1,0,0,Pcp Change
+CC947987281,0,1,0,1,0,0,Pcp Change
+MV543651043,1,1,0,0,0,0,Pcp Change
+BY977099560,1,1,0,1,0,0,Pcp Change
+FP360433175,1,1,0,1,0,0,Pcp Change
+VN088200423,1,1,0,0,0,0,Pcp Change
+ON150851483,0,1,0,1,0,0,Pcp Change
+CD269872013,1,1,0,1,0,0,Pcp Change
+RT368819730,1,1,0,1,0,0,Pcp Change
+CA972568440,1,1,0,1,0,0,Pcp Change
+TN315114834,1,1,0,0,0,0,Pcp Change
+DN085737537,1,1,0,1,0,0,Pcp Change
+ZE166829759,0,1,0,0,0,0,Pcp Change
+ZX995341533,0,1,0,0,0,0,Pcp Change
+GX679396940,1,1,0,1,0,0,Pcp Change
+BJ952637048,1,1,0,1,0,0,Pcp Change
+MO721648379,1,1,0,1,0,0,Pcp Change
+XX694237699,1,1,0,0,0,0,Pcp Change
+FB606640799,1,1,0,1,0,0,Pcp Change
+PF507538125,0,1,0,1,0,0,Pcp Change
+KG467817263,1,1,0,1,0,0,Pcp Change
+JK794320135,1,1,0,1,0,0,Pcp Change
+NI468637663,1,1,0,1,0,0,Pcp Change
+VK291810098,1,1,0,0,0,0,Pcp Change
+WC127829965,0,1,0,1,0,0,Pcp Change
+WY962354360,1,1,0,1,0,0,Pcp Change
+PH687260157,1,1,0,1,0,0,Pcp Change
+WW649424178,1,1,0,1,0,0,Pcp Change
+CX229985996,1,1,0,1,0,0,Pcp Change
+IM540068360,1,1,0,0,0,0,Pcp Change
+ZZ098775092,0,1,0,1,0,0,Pcp Change
+QO152785789,1,1,0,1,0,0,Pcp Change
+KZ193201688,1,1,0,1,0,0,Pcp Change
+TM643016672,0,1,0,1,0,0,Pcp Change
+XY597498547,1,1,0,1,0,0,Pcp Change
+TX544253574,1,1,0,1,0,0,Pcp Change
+YY760128508,1,1,0,1,0,0,Pcp Change
+YY471176131,1,1,0,1,0,0,Pcp Change
+FH132016635,0,1,0,1,0,0,Pcp Change
+LA791496045,0,1,0,1,0,0,Pcp Change
+XH174835954,1,1,0,1,0,0,Pcp Change
+KS204931956,1,1,0,1,0,0,Pcp Change
+XA634195665,1,1,0,0,0,0,Pcp Change
+YP400649640,0,1,0,0,0,0,Pcp Change
+AL338926063,0,1,0,1,0,0,Pcp Change
+SJ915638045,0,1,0,1,0,0,Pcp Change
+MV560498685,1,1,0,1,0,0,Pcp Change
+HM180679923,1,1,0,1,0,0,Pcp Change
+GY945366187,1,1,0,1,0,0,Pcp Change
+XR197939087,0,1,0,0,0,0,Pcp Change
+FF631717617,0,1,0,1,0,0,Pcp Change
+MI712926199,1,1,0,0,0,0,Pcp Change
+YU630623407,1,1,0,1,0,0,Pcp Change
+PY019974018,1,1,0,1,0,0,Pcp Change
+II640990520,1,1,0,1,0,0,Pcp Change
+PH317777119,0,1,0,0,0,0,Pcp Change
+RR449081467,1,1,0,0,0,0,Pcp Change
+SY112095797,1,1,0,1,0,0,Pcp Change
+IK579712215,0,1,0,1,0,0,Pcp Change
+KQ295321947,0,1,0,1,0,0,Pcp Change
+QO021670258,0,1,0,1,0,0,Pcp Change
+MQ485796287,1,1,0,1,0,0,Pcp Change
+OZ700391230,0,0,0,1,0,0,Chronic Condition
+PY240110082,0,0,0,1,0,0,Chronic Condition
+AL739752663,0,0,0,1,0,0,Chronic Condition
+SP525543085,1,0,0,1,0,0,Recent Enrollment Event
+PK112845460,1,0,0,1,0,0,Recent Enrollment Event
+WF996699171,1,0,0,1,0,0,Recent Enrollment Event
+EW724186926,1,0,0,1,0,0,Recent Enrollment Event
+JG618583125,1,0,0,1,0,0,Recent Enrollment Event
+SI389614686,1,0,0,1,0,0,Recent Enrollment Event
+MP833655075,1,0,0,1,0,0,Recent Enrollment Event
+ZA476096125,1,0,0,1,0,0,Recent Enrollment Event
+PE387351754,1,0,0,0,0,0,Recent Enrollment Event
+DJ206268867,1,0,0,0,0,0,Recent Enrollment Event
+SJ443733908,1,0,0,0,0,0,Recent Enrollment Event
+BS567137119,1,0,0,0,0,0,Recent Enrollment Event
+BA247029670,1,0,0,1,0,0,Recent Enrollment Event
+BX718055845,1,0,0,0,0,0,Recent Enrollment Event
+ZG817875195,1,0,0,1,0,0,Recent Enrollment Event
+WI737536238,1,0,0,1,0,0,Recent Enrollment Event
+BG018927628,1,0,0,0,0,0,Recent Enrollment Event
+PE112084741,1,0,0,1,0,0,Recent Enrollment Event
+ZF688516919,1,0,0,1,0,0,Recent Enrollment Event
+SF078850608,1,0,0,1,0,0,Recent Enrollment Event
+HJ582835134,1,0,0,1,0,0,Recent Enrollment Event
+AG479082539,1,0,0,1,0,0,Recent Enrollment Event
+EB553416223,1,0,0,0,0,0,Recent Enrollment Event
+TS585105643,1,0,0,1,0,0,Recent Enrollment Event
+LT340953424,1,0,0,0,0,0,Recent Enrollment Event
+CU118380546,1,0,0,0,0,0,Recent Enrollment Event
+JI639879547,1,0,0,0,0,0,Recent Enrollment Event
+VS701717887,1,0,0,1,0,0,Recent Enrollment Event
+RP962404125,1,0,0,1,0,0,Recent Enrollment Event
+ZP793254037,1,0,0,1,0,0,Recent Enrollment Event
+TZ461318338,1,0,0,1,0,0,Recent Enrollment Event
+UQ349988752,1,0,0,1,0,0,Recent Enrollment Event
+SG701434059,1,0,0,1,0,0,Recent Enrollment Event
+XK263031857,1,0,0,0,0,0,Recent Enrollment Event
+RC485158167,1,0,0,1,0,0,Recent Enrollment Event
+JD787767906,1,0,0,0,0,0,Recent Enrollment Event
+WH490853991,1,0,0,1,0,0,Recent Enrollment Event
+ZH817914670,1,0,0,1,0,0,Recent Enrollment Event
+VT963623074,1,0,0,0,0,0,Recent Enrollment Event
+OD736943737,1,0,0,1,0,0,Recent Enrollment Event
+IN625160079,1,0,0,1,0,0,Recent Enrollment Event
+HO094056248,1,0,0,1,0,0,Recent Enrollment Event
+QI750690319,1,0,0,0,0,0,Recent Enrollment Event
+CY870226092,1,0,0,0,0,0,Recent Enrollment Event
+XY703177374,1,0,0,1,0,0,Recent Enrollment Event
+DB015927934,1,0,0,1,0,0,Recent Enrollment Event
+RU438395823,1,0,0,1,0,0,Recent Enrollment Event
+UM963732691,1,0,0,0,0,0,Recent Enrollment Event
+KX981156493,1,0,0,0,0,0,Recent Enrollment Event
+RO404356222,1,0,0,1,0,0,Recent Enrollment Event
+AO304444329,1,0,0,0,0,0,Recent Enrollment Event
+TQ320244448,1,0,0,0,0,0,Recent Enrollment Event
+BA141784592,1,0,0,1,0,0,Recent Enrollment Event
+YU610402869,1,0,0,1,0,0,Recent Enrollment Event
+YU862470081,1,0,0,1,0,0,Recent Enrollment Event
+LI240971221,1,0,0,1,0,0,Recent Enrollment Event
+SW968302381,1,0,0,1,0,0,Recent Enrollment Event
+UH227704359,1,0,0,1,0,0,Recent Enrollment Event
+DN521956825,1,0,0,1,0,0,Recent Enrollment Event
+XQ069013319,1,0,0,1,0,0,Recent Enrollment Event
+NV271666326,1,0,0,0,0,0,Recent Enrollment Event
+NL124658102,1,0,0,0,0,0,Recent Enrollment Event
+XD166358153,1,0,0,1,0,0,Recent Enrollment Event
+MN908688581,1,0,0,1,0,0,Recent Enrollment Event
+WA731612360,1,0,0,1,0,0,Recent Enrollment Event
+OL459194306,1,0,0,1,0,0,Recent Enrollment Event
+SQ197034691,1,0,0,1,0,0,Recent Enrollment Event
+HN361069090,1,0,0,0,0,0,Recent Enrollment Event
+VW736210879,1,0,0,0,0,0,Recent Enrollment Event
+IE556789776,1,0,0,1,0,0,Recent Enrollment Event
+WO182569855,1,0,0,1,0,0,Recent Enrollment Event
+MA944335770,1,0,0,0,0,0,Recent Enrollment Event
+HP322604300,1,0,0,1,0,0,Recent Enrollment Event
+VM789057555,1,0,0,1,0,0,Recent Enrollment Event
+WE470336206,1,0,0,1,0,0,Recent Enrollment Event
+UA849421807,1,0,0,1,0,0,Recent Enrollment Event
+TP394781862,1,0,0,1,0,0,Recent Enrollment Event
+NO556156670,1,0,0,1,0,0,Recent Enrollment Event
+MK105761074,1,0,0,0,0,0,Recent Enrollment Event
+UA650398456,1,0,0,1,0,0,Recent Enrollment Event
+RI030449005,1,0,0,1,0,0,Recent Enrollment Event
+OU223007568,1,0,0,1,0,0,Recent Enrollment Event
+TD692718143,1,0,0,1,0,0,Recent Enrollment Event
+CV854373479,1,0,0,0,0,0,Recent Enrollment Event
+VB625171417,1,0,0,1,0,0,Recent Enrollment Event
+RR437194146,1,0,0,0,0,0,Recent Enrollment Event
+ZL166162265,1,0,0,0,0,0,Recent Enrollment Event
+GS824288256,1,0,0,1,0,0,Recent Enrollment Event
+DW350866942,1,0,0,0,0,0,Recent Enrollment Event
+AR100975138,1,0,0,1,0,0,Recent Enrollment Event
+IN593224677,1,0,0,0,0,0,Recent Enrollment Event
+JV576349402,1,1,1,1,0,0,Active Cm Program
+IO304624861,1,1,1,1,0,0,Active Cm Program
+IH098683882,0,0,1,1,0,0,Active Cm Program
+KF345050943,0,0,1,1,0,0,Active Cm Program
+PP684754308,0,1,1,1,0,0,Active Cm Program
+YN694775034,1,1,1,0,0,0,Active Cm Program
+BW464876444,1,1,1,1,0,0,Active Cm Program
+KL801837463,1,0,1,1,0,0,Active Cm Program
+WH629672495,1,0,1,1,0,0,Active Cm Program
+RH608474977,1,0,1,1,0,0,Active Cm Program
+LN757007124,1,1,1,0,0,0,Active Cm Program
+PL194740935,0,1,1,1,0,0,Active Cm Program
+RS697208666,1,1,1,0,0,0,Active Cm Program
+WU704089948,1,1,1,0,0,0,Active Cm Program
+OR919489091,1,1,1,1,0,0,Active Cm Program
+RC483640116,1,1,1,0,0,0,Active Cm Program
+FQ266756518,0,1,1,1,0,0,Active Cm Program
+YH033900143,1,1,1,1,0,0,Active Cm Program
+YN333163855,1,0,1,1,0,0,Active Cm Program
+XI713446163,1,0,1,0,0,0,Active Cm Program
+TI141819450,0,0,1,0,0,0,Active Cm Program
+QP145128043,1,1,1,1,0,0,Active Cm Program
+MB214652007,0,0,1,1,0,0,Active Cm Program
+HT453636489,0,0,1,1,0,0,Active Cm Program
+BA622577083,0,0,1,1,0,0,Active Cm Program
+WX516709861,1,0,1,0,0,0,Active Cm Program
+OO513791079,0,0,1,1,0,0,Active Cm Program
+CC258604206,1,1,1,1,0,0,Active Cm Program
+UG217617200,0,0,1,1,0,0,Active Cm Program
+LP074413160,1,1,1,1,0,0,Active Cm Program
+SW158041093,1,1,1,1,0,0,Active Cm Program
+EJ991315399,0,1,1,1,0,0,Active Cm Program
+WY964487800,1,0,1,1,0,0,Active Cm Program
+YI698773322,1,1,1,1,0,0,Active Cm Program
+DP335076804,1,1,1,1,0,0,Active Cm Program
+BC713346213,1,0,1,1,0,0,Active Cm Program
+AI344726620,0,1,1,0,0,0,Active Cm Program
+QR666552472,1,1,1,1,0,0,Active Cm Program
+FO245581871,1,1,1,1,0,0,Active Cm Program
+TL434749389,1,1,1,1,0,0,Active Cm Program
+NU809697742,0,0,1,1,0,0,Active Cm Program
+FE068759332,1,1,1,0,0,0,Active Cm Program
+WJ984839063,1,0,1,1,0,0,Active Cm Program
+HT938284566,0,1,1,0,0,0,Active Cm Program
+EN359327384,0,0,1,1,0,0,Active Cm Program
+GT746756000,1,1,1,1,0,0,Active Cm Program
+LW711717009,1,1,1,1,0,0,Active Cm Program
+RE510313033,1,0,1,1,0,0,Active Cm Program
+WY933510214,1,1,1,0,0,0,Active Cm Program
+XC600942829,1,1,1,1,0,0,Active Cm Program
+IS349559763,1,1,1,1,0,0,Active Cm Program
+EM091284954,1,1,1,1,0,0,Active Cm Program
+QF040399648,0,1,1,1,0,0,Active Cm Program
+CK938037109,1,0,1,1,0,0,Active Cm Program
+WV924417639,1,0,1,1,0,0,Active Cm Program
+PQ695336838,1,1,1,0,0,0,Active Cm Program
+WG589727965,1,1,1,1,0,0,Active Cm Program
+FX449429960,1,1,1,1,0,0,Active Cm Program
+XE779193919,0,1,1,0,0,0,Active Cm Program
+DH185739780,0,1,1,1,0,0,Active Cm Program
+MO216470454,1,0,1,0,0,0,Active Cm Program
+IB054107398,1,1,1,1,0,0,Active Cm Program
+GR755874119,0,1,1,0,0,0,Active Cm Program
+KT695482165,1,1,1,1,0,0,Active Cm Program
+LJ086128653,1,0,1,1,0,0,Active Cm Program
+SR064363630,1,0,1,1,0,0,Active Cm Program
+GA734373857,0,0,1,1,0,0,Active Cm Program
+KC170395955,0,1,1,1,0,0,Active Cm Program
+QI118191747,0,0,1,0,0,0,Active Cm Program
+EE185688305,1,0,1,1,0,0,Active Cm Program
+IF309761084,1,1,1,1,0,0,Active Cm Program
+EA643129861,1,1,1,0,0,0,Active Cm Program
+UG843905100,0,1,1,1,0,0,Active Cm Program
+SR532588792,0,1,1,1,0,0,Active Cm Program
+XI194592377,0,1,1,1,0,0,Active Cm Program
+YX303753953,1,0,1,0,0,0,Active Cm Program
+DD350921392,1,1,1,1,0,0,Active Cm Program
+EH868723140,0,1,1,1,0,0,Active Cm Program
+EA660703957,0,1,1,0,0,0,Active Cm Program
+CX663217689,1,1,1,0,0,0,Active Cm Program
+NZ250206653,1,0,1,1,0,0,Active Cm Program
+XX651880623,1,1,1,1,0,0,Active Cm Program
+JH017196443,0,1,1,1,0,0,Active Cm Program
+HU324188534,0,1,1,1,0,0,Active Cm Program
+OF292345212,0,1,1,1,0,0,Active Cm Program
+NH407469910,1,1,1,0,0,0,Active Cm Program
+WJ768149755,0,0,1,0,0,0,Active Cm Program
+FG401210089,0,1,1,1,0,0,Active Cm Program
+HU181437509,1,0,1,1,0,0,Active Cm Program
+PV832130438,0,1,1,1,0,0,Active Cm Program
+KK162578646,0,1,1,1,0,0,Active Cm Program
+RY612409549,1,1,1,1,0,0,Active Cm Program
+AZ813404004,0,0,1,0,0,0,Active Cm Program
+UP793544681,0,0,1,1,0,0,Active Cm Program
+RY283577585,1,1,1,1,0,0,Active Cm Program
+SS854373930,1,0,1,0,0,0,Active Cm Program
+KR822836635,0,1,1,1,0,0,Active Cm Program
+OF128416515,1,1,1,1,0,0,Active Cm Program
+QA649434767,0,1,1,1,0,0,Active Cm Program
+AQ516421866,1,1,1,0,0,0,Active Cm Program
+XL651142917,1,1,1,1,0,0,Active Cm Program
+FH665806330,1,1,1,0,0,0,Active Cm Program
+RA768448854,1,1,1,0,0,0,Active Cm Program
+IH801300764,1,0,1,0,0,0,Active Cm Program
+KM928463156,0,1,1,1,0,0,Active Cm Program
+NH622984839,1,0,1,1,0,0,Active Cm Program
+SJ451316554,1,1,1,1,0,0,Active Cm Program
+QW641693264,1,1,1,1,0,0,Active Cm Program
+FI609137047,1,0,1,0,0,0,Active Cm Program
+FP000076431,1,0,1,1,0,0,Active Cm Program
+PF092872756,0,1,1,1,0,0,Active Cm Program
+RF645832500,1,0,1,1,0,0,Active Cm Program
+LU288053869,1,1,1,1,0,0,Active Cm Program
+KK218952198,1,0,1,0,0,0,Active Cm Program
+PA992708167,0,0,1,0,0,0,Active Cm Program
+NR708255670,1,1,1,1,0,0,Active Cm Program
+FV707318174,0,1,1,1,0,0,Active Cm Program
+AP318216637,1,0,1,1,0,0,Active Cm Program
+IM449830893,1,1,1,0,0,0,Active Cm Program
+CQ236596927,0,0,1,1,0,0,Active Cm Program
+RZ050439101,1,1,1,0,0,0,Active Cm Program
+DP774810538,1,0,1,1,0,0,Active Cm Program
+WT382837481,0,0,0,1,0,0,Chronic Condition
+LJ185032355,1,0,0,1,0,0,Recent Enrollment Event
+ZW521042122,1,0,0,1,0,0,Recent Enrollment Event
+LE761028574,1,0,0,0,0,0,Recent Enrollment Event
+YW542209895,1,0,0,1,0,0,Recent Enrollment Event
+LH352851055,1,0,0,0,0,0,Recent Enrollment Event
+TO826086346,1,0,0,1,0,0,Recent Enrollment Event
+OI735981530,1,0,0,0,0,0,Recent Enrollment Event
+HQ512552398,1,0,0,0,0,0,Recent Enrollment Event
+UN325918732,1,0,0,1,0,0,Recent Enrollment Event
+NI668322480,1,0,0,1,0,0,Recent Enrollment Event
+MO459336663,1,0,0,1,0,0,Recent Enrollment Event
+CB516082555,1,0,0,0,0,0,Recent Enrollment Event
+LG195487237,1,0,0,1,0,0,Recent Enrollment Event
+ZR890691532,1,0,0,1,0,0,Recent Enrollment Event
+SC924687342,1,0,0,0,0,0,Recent Enrollment Event
+ZY842385136,1,0,0,0,0,0,Recent Enrollment Event
+BS159679879,1,0,0,1,0,0,Recent Enrollment Event
+SW808165320,1,0,0,1,0,0,Recent Enrollment Event
+HB032112305,1,0,0,1,0,0,Recent Enrollment Event
+TL887646589,1,0,0,1,0,0,Recent Enrollment Event
+ZT928918169,1,0,0,1,0,0,Recent Enrollment Event
+KV504893260,1,0,0,1,0,0,Recent Enrollment Event
+VP475863282,1,0,0,1,0,0,Recent Enrollment Event
+PA239570945,1,0,0,1,0,0,Recent Enrollment Event
+EU856212257,1,0,0,1,0,0,Recent Enrollment Event
+JV531142721,1,0,0,1,0,0,Recent Enrollment Event
+HX141860149,1,0,0,0,0,0,Recent Enrollment Event
+II516095321,1,0,0,1,0,0,Recent Enrollment Event
+EJ554413322,1,0,0,1,0,0,Recent Enrollment Event
+GK190709640,1,0,0,0,0,0,Recent Enrollment Event
+RR876830791,1,0,0,1,0,0,Recent Enrollment Event
+JT240711841,1,0,0,1,0,0,Recent Enrollment Event
+TT217021963,1,0,0,1,0,0,Recent Enrollment Event
+JX006194163,1,0,0,0,0,0,Recent Enrollment Event
+GU194426765,1,1,0,0,0,0,Pcp Change
+PZ809308769,1,1,0,1,0,0,Pcp Change
+IN774776160,1,1,0,1,0,0,Pcp Change
+RN552267659,1,1,0,1,0,0,Pcp Change
+CH360152448,1,1,0,1,0,0,Pcp Change
+TA325504547,1,1,0,1,0,0,Pcp Change
+SE910572841,1,1,0,1,0,0,Pcp Change
+TY753874162,1,1,0,1,0,0,Pcp Change
+CJ186784231,1,1,0,1,0,0,Pcp Change
+GU284871717,0,1,0,1,0,0,Pcp Change
+EW539527507,0,1,0,0,0,0,Pcp Change
+VE010382862,1,1,0,0,0,0,Pcp Change
+OE007416040,0,1,0,1,0,0,Pcp Change
+FU449048615,1,1,0,1,0,0,Pcp Change
+RZ916604096,1,1,0,0,0,0,Pcp Change
+XY619695277,1,1,0,1,0,0,Pcp Change
+VC251709408,1,1,0,1,0,0,Pcp Change
+VI827662690,0,1,0,1,0,0,Pcp Change
+KE154246913,0,1,0,0,0,0,Pcp Change
+DJ731454234,0,1,0,1,0,0,Pcp Change
+CQ205185590,1,1,0,1,0,0,Pcp Change
+KJ345936533,0,1,0,1,0,0,Pcp Change
+UW913484778,0,1,0,0,0,0,Pcp Change
+TN720352933,0,1,0,0,0,0,Pcp Change
+XB645698072,1,1,0,1,0,0,Pcp Change
+IQ242012803,0,1,0,0,0,0,Pcp Change
+JB577686376,1,1,0,0,0,0,Pcp Change
+LB660886280,1,1,0,0,0,0,Pcp Change
+UC086518514,1,1,0,1,0,0,Pcp Change
+HU285600046,1,1,0,1,0,0,Pcp Change
+AZ580015821,0,1,0,1,0,0,Pcp Change
+CX461915221,1,1,0,1,0,0,Pcp Change
+BX128920377,0,1,0,1,0,0,Pcp Change
+FZ286395966,0,1,0,1,0,0,Pcp Change
+FS415395405,1,1,0,0,0,0,Pcp Change
+IS453060910,0,1,0,0,0,0,Pcp Change
+FI573861540,1,1,0,1,0,0,Pcp Change
+IB901247042,0,1,0,0,0,0,Pcp Change
+JC310553205,1,1,0,1,0,0,Pcp Change
+VR300562263,0,0,1,1,0,1,Active Claim
+SJ597801457,1,0,0,1,0,1,Active Claim
+YT592302947,1,1,1,1,0,1,Active Claim
+JG456351512,0,1,1,0,0,1,Active Claim
+YQ258942990,1,0,1,1,0,1,Active Claim
+MP702292506,1,0,1,1,0,1,Active Claim
+ZC189402209,0,1,1,1,0,1,Active Claim
+HG449515534,0,1,1,0,0,1,Active Claim
+OG601796112,1,1,1,1,0,1,Active Claim
+SA743977923,0,1,0,1,0,1,Active Claim
+NW733641199,0,0,1,0,0,1,Active Claim
+RP630915543,1,0,1,0,0,1,Active Claim
+QX002929411,1,1,1,0,0,1,Active Claim
+QT050686833,1,1,1,0,0,1,Active Claim
+UT497472432,0,0,1,1,0,1,Active Claim
+FE819321812,1,1,1,1,0,1,Active Claim
+SF617945081,1,0,1,0,0,1,Active Claim
+DV057921922,0,1,1,1,0,1,Active Claim
+IJ193586593,1,1,1,1,0,1,Active Claim
+CX784470517,0,1,1,1,0,1,Active Claim
+CP111375379,1,1,1,1,0,1,Active Claim
+BZ832590521,1,1,1,1,0,1,Active Claim
+ZH973281744,0,1,0,0,0,1,Active Claim
+TV934881874,1,1,0,1,0,1,Active Claim
+UH024788518,1,1,1,1,0,1,Active Claim
+GV099491956,0,1,0,1,0,1,Active Claim
+GY710565319,1,0,1,1,0,1,Active Claim
+BE975657682,1,0,0,1,0,1,Active Claim
+OK652823911,1,1,1,1,0,1,Active Claim
+EH253503272,0,1,1,0,0,1,Active Claim
+FE746794429,0,1,1,1,0,1,Active Claim
+IQ712704771,1,1,1,1,0,1,Active Claim
+AU888749406,1,1,1,0,0,1,Active Claim
+VV545899241,1,0,1,1,0,1,Active Claim
+OQ042530405,1,1,1,1,0,1,Active Claim
+OH998489802,1,1,1,0,0,1,Active Claim
+KO771833731,1,0,0,1,0,1,Active Claim
+NB759020002,1,0,1,1,0,1,Active Claim
+DA977812525,1,1,1,0,0,1,Active Claim
+AX322112752,1,0,0,0,0,1,Active Claim
+WW945098621,1,1,0,1,0,1,Active Claim
+VY093070704,0,0,1,0,0,1,Active Claim
+RT806270755,1,1,1,1,0,1,Active Claim
+RK372194743,0,1,1,1,0,1,Active Claim
+CD268933741,1,1,1,1,0,1,Active Claim
+XU537525786,1,1,0,1,0,1,Active Claim
+JF883987912,1,0,1,1,0,1,Active Claim
+DA738270364,0,1,0,0,0,1,Active Claim
+PX969444014,1,1,1,1,0,1,Active Claim
+BC459064431,1,1,1,1,0,1,Active Claim
+WJ849339948,1,0,1,1,0,1,Active Claim
+KD041535318,1,0,0,0,0,1,Active Claim
+WH642650469,0,1,1,1,0,1,Active Claim
+AO890991704,1,0,0,1,0,1,Active Claim
+TI750907038,1,1,0,1,0,1,Active Claim
+BL109850592,0,1,1,1,0,1,Active Claim
+EE445606160,0,1,1,1,0,1,Active Claim
+DY883050195,1,1,1,1,0,1,Active Claim
+DF171605802,0,1,1,0,0,1,Active Claim
+RK956857586,1,0,0,1,0,1,Active Claim
+IR545563306,0,0,0,1,0,1,Active Claim
+HP724662071,1,0,0,1,0,1,Active Claim
+RQ797645764,1,1,0,0,0,1,Active Claim
+LB956352422,1,1,0,1,1,0,Active Grievance
+MM084301433,1,1,1,1,1,0,Active Grievance
+GH172320474,1,1,1,0,1,0,Active Grievance
+VW911121026,0,1,0,1,1,1,Active Grievance
+VJ510151959,1,1,1,1,1,1,Active Grievance
+FF005227421,1,0,0,1,1,0,Active Grievance
+TZ391280332,1,0,1,0,1,1,Active Grievance
+YI400695171,1,0,0,1,1,1,Active Grievance
+CG377993823,1,1,0,1,1,0,Active Grievance
+IQ867127036,1,1,0,1,1,0,Active Grievance
+DM774910616,1,0,1,1,1,1,Active Grievance
+OC912075749,1,0,1,1,1,1,Active Grievance
+XV309239967,1,1,1,0,1,1,Active Grievance
+HM294854932,1,0,0,0,1,1,Active Grievance
+XU391823378,0,1,1,0,1,1,Active Grievance
+QH608456261,0,0,1,1,1,0,Active Grievance
+GT511809286,0,0,1,1,1,0,Active Grievance
+ZV884815008,1,1,1,1,1,1,Active Grievance
+YE323507525,1,0,1,1,1,1,Active Grievance
+XO174845200,1,1,1,0,1,0,Active Grievance
+LK287419684,1,1,0,1,1,0,Active Grievance
+AH764031684,1,0,1,1,1,0,Active Grievance
+PD554989102,1,1,1,1,1,1,Active Grievance
+IK044609320,0,1,1,1,1,0,Active Grievance
+VW382674075,0,1,0,1,1,1,Active Grievance
+RD614030632,1,0,1,1,1,0,Active Grievance
+VZ065084999,1,1,1,0,1,1,Active Grievance
+AL679413933,1,1,1,0,1,1,Active Grievance
+PC574563385,1,1,0,0,1,1,Active Grievance
+SB551925543,0,1,1,1,1,1,Active Grievance
+PZ937344273,1,0,1,1,1,1,Active Grievance
+ZZ036956856,1,1,1,0,1,0,Active Grievance
+RS257167535,1,1,0,1,1,1,Active Grievance
+GK116608758,1,1,1,1,1,1,Active Grievance
+ZA141415362,0,1,1,1,1,1,Active Grievance
+CQ395006844,0,1,0,1,1,0,Active Grievance
+MF234211755,1,0,0,1,1,0,Active Grievance
+TI072997925,1,1,0,0,1,0,Active Grievance
+DH021441035,1,1,1,1,1,1,Active Grievance
+UH471541108,1,1,1,1,1,1,Active Grievance
+YK763566478,1,1,0,0,1,1,Active Grievance
+VN941074880,0,1,1,1,1,0,Active Grievance
+DW611111023,1,1,1,1,1,0,Active Grievance
+TJ803402605,1,1,0,1,1,1,Active Grievance
+RZ069741561,0,1,1,1,1,0,Active Grievance
+KJ713385176,1,0,1,1,1,1,Active Grievance
+OI218467861,1,0,1,1,1,1,Active Grievance
+ZW096967064,1,0,1,1,1,0,Active Grievance
+JA744485481,1,1,1,0,1,0,Active Grievance
+XA960121371,0,1,0,1,1,0,Active Grievance
+WV450562767,1,1,0,0,1,1,Active Grievance
+SV591674601,1,1,1,1,1,1,Active Grievance
+JW117124744,1,1,1,1,1,0,Active Grievance
+VC802081167,1,1,1,1,1,1,Active Grievance
+OW065612037,0,1,1,1,1,1,Active Grievance
