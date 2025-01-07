@@ -772,7 +772,7 @@ def generate_draft_action(chat_history, next_best_action):
 def send_email(recipient_email, subject, body):
     st.write(f"Sending an email to: {recipient_email}")
     cmd = """CALL SYSTEM$SEND_EMAIL(
-             'my_email_int',
+             'payers_cc_email_int',
              ?,
              ?,
             ?
