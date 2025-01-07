@@ -5,7 +5,7 @@ tables:
   description: 'A logical table capturing member specific information'
   base_table:
     database: PAYERS_CC_DB
-    schema: PAYER_CC_SCHEMA
+    schema: PAYERS_CC_SCHEMA
     table: CALL_CENTER_MEMBER_DENORMALIZED
   dimensions:
   - name: MEMBER_ID
