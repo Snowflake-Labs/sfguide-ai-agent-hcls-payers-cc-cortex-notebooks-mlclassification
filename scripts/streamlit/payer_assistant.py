@@ -22,11 +22,15 @@ SCHEMA = session.get_current_schema()
 STAGE = "RAW_DATA"
 FILE = "DATA_PRODUCT/Call_Center_Member_Denormalized.yaml"
 
-num_chunks = 1
-num_transcripts = 2
-slide_window = 3
+num_chunks = 1 # number of chunks to retrieve from cortex search (FAQ docs)
+num_transcripts = 2 # number of transcripts to retrieve from cortex search (Call transcripts)
+slide_window = 3 # window of chat history to consider for each subsequent question
 
 def config_options():
+    """
+    Create sidebar configs for Streamlit app 
+    """
+        
     st.markdown(
         """
         <style>
@@ -106,6 +110,9 @@ def config_options():
     return clear_conversation
 
 def init_messages(clear_conversation):
+    """
+    Initialize a new session state or clear existing session state
+    """
     if clear_conversation or 'messages' not in st.session_state:
         st.session_state.messages = []
         st.session_state.suggestions = []
@@ -120,7 +127,9 @@ def init_messages(clear_conversation):
         st.session_state.pop('phone_number_initialized', None)
 
 def execute_cortex_complete(prompt):
-
+    """
+    Execute Cortex Complete for prompts
+    """
     if st.session_state.cortex_complete_type == 'API':
        response_txt = execute_cortex_complete_api(f"""{prompt}.{st.session_state.restriction_prompt}""")
     else:
@@ -128,12 +137,18 @@ def execute_cortex_complete(prompt):
     return response_txt
 
 def execute_cortex_complete_sql(prompt):
+    """
+    Execute Cortex Complete using the SQL API
+    """
     cmd = "SELECT snowflake.cortex.complete(?, ?) AS response"
     df_response = session.sql(cmd, params=[st.session_state.model_name, prompt]).collect()
     response_txt = df_response[0].RESPONSE
     return response_txt
 
-def execute_cortex_complete_api(prompt):    
+def execute_cortex_complete_api(prompt):   
+    """
+    Execute Cortex Complete using the REST API
+    """ 
     response_txt = Complete(
                     st.session_state.model_name,
                     prompt,
@@ -144,6 +159,10 @@ def execute_cortex_complete_api(prompt):
 
 @st.cache_data(show_spinner=False)
 def get_similar_transcripts_cortex_search(question):
+    """
+    Get similar call transcripts using Cortex Search and return them 
+    along with a presigned URL to access the files
+    """ 
     response = (
         root.databases[DATABASE]
         .schemas[SCHEMA]
@@ -183,6 +202,10 @@ def get_similar_transcripts_cortex_search(question):
 
 @st.cache_data(show_spinner=False)
 def get_similar_chunks_cortex_search(question):
+    """
+    Get similar FAQ PDF docs using Cortex Search and return them 
+    along with a presigned URL to access the files
+    """ 
     response = (
         root.databases[DATABASE]
         .schemas[SCHEMA]
@@ -221,6 +244,9 @@ def get_similar_chunks_cortex_search(question):
     return similar_chunks, df_referred
 
 def get_chat_history():
+    """
+    Get chat history based on a sliding window
+    """ 
     if st.session_state.use_chat_history:
         start_index = max(0, len(st.session_state.messages) - slide_window)
         chat_history = st.session_state.messages[start_index:]
@@ -228,6 +254,9 @@ def get_chat_history():
     return []
 
 def summarize_question_with_history(chat_history, question):
+    """
+    Create and execute prompt to summarize chat history
+    """ 
     prompt = f"""
         You are a chatbot expert. Refer the latest question received by the chatbot, evaluate this in context of the Chat History found below. 
         Now share a refined query which captures the full meaning of the question being asked. 
@@ -250,44 +279,13 @@ def summarize_question_with_history(chat_history, question):
 
     return summary
 
-def create_prompt(myquestion, chat_history, intent):
-    if st.session_state.cortex_search:
-        if intent == 'recordings':
-            prompt_context, df_document_urls = get_similar_transcripts_cortex_search(myquestion)
-        else:
-            prompt_context, df_document_urls = get_similar_chunks_cortex_search(myquestion)
-    else:
-        prompt_context = ""
-        df_document_urls = pd.DataFrame()
-
-    prompt = f"""
-    You are an expert chat assistant that extracts information from the CONTEXT provided between <context> and </context> tags.
-    You offer a chat experience considering the information included in the CHAT HISTORY provided between <chat_history> and </chat_history> tags.
-    When answering the question contained between <question> and </question> tags, be concise and do not hallucinate.    
-    If you don't have the information, just say so.
-
-    Do not mention the CONTEXT in your answer.
-    Do not mention the CHAT HISTORY in your answer.
-
-    <context>
-    {prompt_context}
-    </context>
-    <chat_history>
-    {chat_history}
-    </chat_history>
-    <question>
-    {myquestion}
-    </question>
-    Answer:
-    """
-
-    if st.session_state.debug_prompt:
-        st.text(f"Prompt being passed to {st.session_state.model_name}")
-        st.caption(prompt)
-
-    return prompt, df_document_urls
-
 def create_prompt_find_intent(myquestion):
+    """
+    Create first level prompt to detect intent: 
+        - Recordings (Cortex Search to be called)
+        - FAQ (Cortex Search to be called)
+        - Data (Cortex Analyst to be called)
+    """ 
     prompt = f"""
     You are an expert that classifies the question into one of the following categories:
 
@@ -337,7 +335,50 @@ def create_prompt_find_intent(myquestion):
     """
     return prompt
 
+def create_prompt(myquestion, chat_history, intent):
+    """
+    Create second level prompt where intent is Recordings or FAQ
+    """ 
+    if st.session_state.cortex_search:
+        if intent == 'recordings':
+            prompt_context, df_document_urls = get_similar_transcripts_cortex_search(myquestion)
+        else:
+            prompt_context, df_document_urls = get_similar_chunks_cortex_search(myquestion)
+    else:
+        prompt_context = ""
+        df_document_urls = pd.DataFrame()
+
+    prompt = f"""
+    You are an expert chat assistant that extracts information from the CONTEXT provided between <context> and </context> tags.
+    You offer a chat experience considering the information included in the CHAT HISTORY provided between <chat_history> and </chat_history> tags.
+    When answering the question contained between <question> and </question> tags, be concise and do not hallucinate.    
+    If you don't have the information, just say so.
+
+    Do not mention the CONTEXT in your answer.
+    Do not mention the CHAT HISTORY in your answer.
+
+    <context>
+    {prompt_context}
+    </context>
+    <chat_history>
+    {chat_history}
+    </chat_history>
+    <question>
+    {myquestion}
+    </question>
+    Answer:
+    """
+
+    if st.session_state.debug_prompt:
+        st.text(f"Prompt being passed to {st.session_state.model_name}")
+        st.caption(prompt)
+
+    return prompt, df_document_urls
+
 def create_prompt_summarize_cortex_analyst_results(myquestion, df, sql):
+    """
+    Create prompt to summarize Cortex Analyst results in natural language
+    """ 
     prompt = f"""
     You are an expert data analyst who translated the question contained between <question> and </question> tags:
 
@@ -379,15 +420,24 @@ def create_prompt_summarize_cortex_analyst_results(myquestion, df, sql):
     return prompt
 
 def complete(myquestion, chat_history, intent):
+    """
+    Run create_prompt() and execute_cortex_complete() for cases where intent is Recordings or FAQ
+    """ 
     prompt, df_document_urls = create_prompt(myquestion, chat_history, intent)
     response_txt = execute_cortex_complete(prompt)
     return response_txt, df_document_urls
 
 def complete_for_cortex_analyst(prompt):
+    """
+    Run execute_cortex_complete() for Cortex Analyst
+    """ 
     response_txt = execute_cortex_complete(prompt)
     return response_txt
 
 def find_question_type(myquestion):
+    """
+    Run create_prompt() and execute_cortex_complete() to find intent
+    """ 
     prompt = create_prompt_find_intent(myquestion)
     response_txt = execute_cortex_complete(prompt)
     if st.session_state.debug:
@@ -397,6 +447,10 @@ def find_question_type(myquestion):
     return response_txt
 
 def find_violation(myquestion):
+    """
+    Run execute_cortex_complete() on a prompt to detect a violation whether 
+    a question contains any member names other than the one selected
+    """ 
     if st.session_state.restricted_member:
         prompt = f"""
         You are an expert that determines whether a question violates the policy of accessing only data for the selected member.
@@ -418,6 +472,9 @@ def find_violation(myquestion):
         return False
 
 def send_message(prompt: str) -> dict:
+    """
+    Make an API call to Cortex Analyst
+    """ 
     request_body = {
         "messages": [
             {
@@ -447,6 +504,9 @@ def send_message(prompt: str) -> dict:
         raise Exception(f"Failed request with status {resp['status']}: {resp}")
 
 def process_message(prompt: str, question_summary: str, summary_msg: str):
+    """
+    Process messages
+    """ 
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     with st.chat_message("assistant"):
@@ -461,9 +521,15 @@ def process_message(prompt: str, question_summary: str, summary_msg: str):
     st.session_state.messages.append({"role": "assistant", "content": response_string})
 
 def suggestion_click(suggestion):
+    """
+    Set active_suggestion when a suggestion is clicked from Cortex Analyst output
+    """ 
     st.session_state.active_suggestion = suggestion
 
 def display_content_new(content: list, prompt, message_index: int = None):
+    """
+    Display content based on content type
+    """ 
     message_index = message_index or len(st.session_state.messages)
     final_response = "Please refine that question"
     sql_statement = "Not Applicable"
@@ -506,6 +572,9 @@ def display_content_new(content: list, prompt, message_index: int = None):
 
 @st.cache_data(show_spinner=False)
 def get_member_details(phone_number):
+    """
+    Run a query to get member details and extract values
+    """ 
     query = f"""
         SELECT MEMBER_ID, NAME, 
         CASE WHEN POTENTIAL_CALLER_INTENT = 'Active Grievance' THEN POTENTIAL_CALLER_INTENT||':'||GRIEVANCE_TYPE
@@ -531,6 +600,9 @@ def get_member_details(phone_number):
     )
 
 def on_phone_number_change():
+    """
+    Update session state if phone number is changed
+    """ 
     st.session_state.messages = [] #resetting messages
     phone_number = st.session_state.phone_number
     try:
@@ -560,6 +632,9 @@ def on_phone_number_change():
         st.session_state.pop('initial_chat_string', None)
 
 def display_member_info():
+    """
+    Display member info and sample questions in Streamlit app
+    """ 
     st.markdown(
         """
         <style>
@@ -672,6 +747,9 @@ def display_member_info():
         st.sidebar.write("Select a phone number to retrieve caller intent and member details.")
 
 def determine_next_best_action(chat_history):
+    """
+    Create a prompt and run execute_cortex_complete() to determine the next best action 
+    """
     prompt = f"""
     You are an intelligent call center assistant.
     Below is the conversation related to an ongoing call center interaction.
@@ -716,6 +794,9 @@ def determine_next_best_action(chat_history):
         return "Unable to determine next best action due to an internal error."
 
 def generate_draft_action(chat_history, next_best_action):
+    """
+    Create a prompt and run execute_cortex_complete() to craft an email 
+    """
     prompt = f"""
     You are an intelligent call center assistant.
     Below is the conversation related to an ongoing call center interaction.
@@ -770,6 +851,9 @@ def generate_draft_action(chat_history, next_best_action):
     return response
 
 def send_email(recipient_email, subject, body):
+    """
+    Send an email using SYSTEM$SEND_EMAIL
+    """
     st.write(f"Sending an email to: {recipient_email}")
     cmd = """CALL SYSTEM$SEND_EMAIL(
              'payers_cc_email_int',
@@ -784,7 +868,7 @@ def send_email(recipient_email, subject, body):
         st.write("Please enter a valid email in the sidebar configs.")
 
 def main():
-    st.title(f"Payer Call Center Agent :robot_face:")
+    st.title(f"Payer Contact Center Agent :robot_face:")
     st.subheader(f"Powered by Snowflake Cortex :snowflake::snowflake:")
 
     clear_conversation = config_options()
@@ -821,7 +905,6 @@ def main():
     else:
         question = None
 
-   
     if question:
         st.session_state['show_next_best_action'] = False
         chat_history = get_chat_history()
