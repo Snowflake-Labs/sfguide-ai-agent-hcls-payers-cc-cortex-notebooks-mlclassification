@@ -5,3 +5,4 @@ dependencies:
 - snowflake-ml-python
 - snowflake.core
 - streamlit
+- pypdfium2

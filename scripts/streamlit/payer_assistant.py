@@ -9,6 +9,7 @@ import json
 import os
 from snowflake.snowpark import Session
 import pandas as pd
+import pypdfium2 as pdfium
 
 session = get_active_session()
 root = Root(session)
@@ -30,7 +31,6 @@ def config_options():
     """
     Create sidebar configs for Streamlit app 
     """
-        
     st.markdown(
         """
         <style>
@@ -55,7 +55,6 @@ def config_options():
         st.session_state['debug_prompt'] = False
    
         # Reset other relevant session state variables
-        st.session_state.pop('restricted_member_toggle', None)
         st.session_state.pop('restricted_member', None)
         st.session_state.pop('messages', None)
         st.session_state.pop('suggestions', None)
@@ -126,6 +125,62 @@ def init_messages(clear_conversation):
         # Properly reset 'phone_number_initialized' by removing it
         st.session_state.pop('phone_number_initialized', None)
 
+def download_file_from_stage(relative_path: str) -> str:
+    """
+    Download a file (PDF, audio, etc.) from a Snowflake stage to a local temp directory.
+    Returns the local file path.
+    """
+    local_dir = "/tmp/"  # or any temp directory
+    relative_path = relative_path.replace(r'call_recordings/', 'CALL_RECORDINGS/')
+    session.file.get(f"@{DATABASE}.{SCHEMA}.{STAGE}/{relative_path}", local_dir)
+    local_file_path = os.path.join(local_dir, os.path.basename(relative_path))
+    return local_file_path
+
+def get_pdf(local_pdf_path: str) -> pdfium.PdfDocument:
+    """
+    Cache the loaded PDF to avoid re-downloading and re-parsing on every run.
+    """
+    return pdfium.PdfDocument(local_pdf_path)
+
+def display_file_with_scrollbar(relative_path: str, file_type: str = "pdf", unique_key: str = ""):
+    """
+    A generic function that displays either a PDF or an audio file,
+    depending on the 'file_type' parameter.
+    
+    file_type can be "pdf" or "audio".
+    """
+    local_file_path = download_file_from_stage(relative_path)
+    if not os.path.exists(local_file_path):
+        st.error(f"Could not find the {file_type} at {local_file_path}.")
+        return
+
+    # Common UI wrapper
+    with st.expander(f"Preview: {os.path.basename(relative_path)}", expanded=False):
+        if file_type == "pdf":
+            # PDF rendering logic
+            pdf_doc = get_pdf(local_file_path)
+            total_pages = len(pdf_doc)
+
+            # Example approach: show first 2 pages
+            page_numbers = (1, min(2, total_pages))
+            start_page, end_page = page_numbers
+
+            pdf_container = st.container(height = 300)
+            for page_number in range(start_page - 1, end_page):
+                page = pdf_doc[page_number]
+                bitmap = page.render(scale=1.0)
+                pil_image = bitmap.to_pil()
+                with pdf_container:
+                    st.image(pil_image, use_column_width=True)
+
+        elif file_type == "audio":
+            # Audio playback logic
+            # 'format' can be adjusted to match your audio file type, e.g. "audio/mpeg"
+            st.audio(local_file_path, format="audio/mpeg")
+
+        else:
+            st.warning(f"File type '{file_type}' not supported for preview.")
+
 def execute_cortex_complete(prompt):
     """
     Execute Cortex Complete for prompts
@@ -145,10 +200,10 @@ def execute_cortex_complete_sql(prompt):
     response_txt = df_response[0].RESPONSE
     return response_txt
 
-def execute_cortex_complete_api(prompt):   
+def execute_cortex_complete_api(prompt):    
     """
     Execute Cortex Complete using the REST API
-    """ 
+    """
     response_txt = Complete(
                     st.session_state.model_name,
                     prompt,
@@ -162,7 +217,7 @@ def get_similar_transcripts_cortex_search(question):
     """
     Get similar call transcripts using Cortex Search and return them 
     along with a presigned URL to access the files
-    """ 
+    """
     response = (
         root.databases[DATABASE]
         .schemas[SCHEMA]
@@ -205,7 +260,7 @@ def get_similar_chunks_cortex_search(question):
     """
     Get similar FAQ PDF docs using Cortex Search and return them 
     along with a presigned URL to access the files
-    """ 
+    """
     response = (
         root.databases[DATABASE]
         .schemas[SCHEMA]
@@ -246,7 +301,7 @@ def get_similar_chunks_cortex_search(question):
 def get_chat_history():
     """
     Get chat history based on a sliding window
-    """ 
+    """
     if st.session_state.use_chat_history:
         start_index = max(0, len(st.session_state.messages) - slide_window)
         chat_history = st.session_state.messages[start_index:]
@@ -256,7 +311,7 @@ def get_chat_history():
 def summarize_question_with_history(chat_history, question):
     """
     Create and execute prompt to summarize chat history
-    """ 
+    """
     prompt = f"""
         You are a chatbot expert. Refer the latest question received by the chatbot, evaluate this in context of the Chat History found below. 
         Now share a refined query which captures the full meaning of the question being asked. 
@@ -279,13 +334,53 @@ def summarize_question_with_history(chat_history, question):
 
     return summary
 
+def create_prompt(myquestion, chat_history, intent):
+    """
+    Create second level prompt where intent is Recordings or FAQ
+    """
+    if st.session_state.cortex_search:
+        if intent == 'recordings':
+            prompt_context, df_document_urls = get_similar_transcripts_cortex_search(myquestion)
+        else:
+            prompt_context, df_document_urls = get_similar_chunks_cortex_search(myquestion)
+    else:
+        prompt_context = ""
+        df_document_urls = pd.DataFrame()
+
+    prompt = f"""
+    You are an expert chat assistant that extracts information from the CONTEXT provided between <context> and </context> tags.
+    You offer a chat experience considering the information included in the CHAT HISTORY provided between <chat_history> and </chat_history> tags.
+    When answering the question contained between <question> and </question> tags, be concise and do not hallucinate.    
+    If you don't have the information, just say so.
+
+    Do not mention the CONTEXT in your answer.
+    Do not mention the CHAT HISTORY in your answer.
+
+    <context>
+    {prompt_context}
+    </context>
+    <chat_history>
+    {chat_history}
+    </chat_history>
+    <question>
+    {myquestion}
+    </question>
+    Answer:
+    """
+
+    if st.session_state.debug_prompt:
+        st.text(f"Prompt being passed to {st.session_state.model_name}")
+        st.caption(prompt)
+
+    return prompt, df_document_urls
+
 def create_prompt_find_intent(myquestion):
     """
     Create first level prompt to detect intent: 
         - Recordings (Cortex Search to be called)
         - FAQ (Cortex Search to be called)
         - Data (Cortex Analyst to be called)
-    """ 
+    """
     prompt = f"""
     You are an expert that classifies the question into one of the following categories:
 
@@ -335,50 +430,10 @@ def create_prompt_find_intent(myquestion):
     """
     return prompt
 
-def create_prompt(myquestion, chat_history, intent):
-    """
-    Create second level prompt where intent is Recordings or FAQ
-    """ 
-    if st.session_state.cortex_search:
-        if intent == 'recordings':
-            prompt_context, df_document_urls = get_similar_transcripts_cortex_search(myquestion)
-        else:
-            prompt_context, df_document_urls = get_similar_chunks_cortex_search(myquestion)
-    else:
-        prompt_context = ""
-        df_document_urls = pd.DataFrame()
-
-    prompt = f"""
-    You are an expert chat assistant that extracts information from the CONTEXT provided between <context> and </context> tags.
-    You offer a chat experience considering the information included in the CHAT HISTORY provided between <chat_history> and </chat_history> tags.
-    When answering the question contained between <question> and </question> tags, be concise and do not hallucinate.    
-    If you don't have the information, just say so.
-
-    Do not mention the CONTEXT in your answer.
-    Do not mention the CHAT HISTORY in your answer.
-
-    <context>
-    {prompt_context}
-    </context>
-    <chat_history>
-    {chat_history}
-    </chat_history>
-    <question>
-    {myquestion}
-    </question>
-    Answer:
-    """
-
-    if st.session_state.debug_prompt:
-        st.text(f"Prompt being passed to {st.session_state.model_name}")
-        st.caption(prompt)
-
-    return prompt, df_document_urls
-
 def create_prompt_summarize_cortex_analyst_results(myquestion, df, sql):
     """
     Create prompt to summarize Cortex Analyst results in natural language
-    """ 
+    """
     prompt = f"""
     You are an expert data analyst who translated the question contained between <question> and </question> tags:
 
@@ -422,7 +477,7 @@ def create_prompt_summarize_cortex_analyst_results(myquestion, df, sql):
 def complete(myquestion, chat_history, intent):
     """
     Run create_prompt() and execute_cortex_complete() for cases where intent is Recordings or FAQ
-    """ 
+    """
     prompt, df_document_urls = create_prompt(myquestion, chat_history, intent)
     response_txt = execute_cortex_complete(prompt)
     return response_txt, df_document_urls
@@ -430,14 +485,14 @@ def complete(myquestion, chat_history, intent):
 def complete_for_cortex_analyst(prompt):
     """
     Run execute_cortex_complete() for Cortex Analyst
-    """ 
+    """
     response_txt = execute_cortex_complete(prompt)
     return response_txt
 
 def find_question_type(myquestion):
     """
     Run create_prompt() and execute_cortex_complete() to find intent
-    """ 
+    """
     prompt = create_prompt_find_intent(myquestion)
     response_txt = execute_cortex_complete(prompt)
     if st.session_state.debug:
@@ -450,7 +505,7 @@ def find_violation(myquestion):
     """
     Run execute_cortex_complete() on a prompt to detect a violation whether 
     a question contains any member names other than the one selected
-    """ 
+    """
     if st.session_state.restricted_member:
         prompt = f"""
         You are an expert that determines whether a question violates the policy of accessing only data for the selected member.
@@ -474,7 +529,7 @@ def find_violation(myquestion):
 def send_message(prompt: str) -> dict:
     """
     Make an API call to Cortex Analyst
-    """ 
+    """
     request_body = {
         "messages": [
             {
@@ -506,7 +561,7 @@ def send_message(prompt: str) -> dict:
 def process_message(prompt: str, question_summary: str, summary_msg: str):
     """
     Process messages
-    """ 
+    """
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     with st.chat_message("assistant"):
@@ -523,13 +578,13 @@ def process_message(prompt: str, question_summary: str, summary_msg: str):
 def suggestion_click(suggestion):
     """
     Set active_suggestion when a suggestion is clicked from Cortex Analyst output
-    """ 
+    """
     st.session_state.active_suggestion = suggestion
 
 def display_content_new(content: list, prompt, message_index: int = None):
     """
     Display content based on content type
-    """ 
+    """
     message_index = message_index or len(st.session_state.messages)
     final_response = "Please refine that question"
     sql_statement = "Not Applicable"
@@ -559,7 +614,8 @@ def display_content_new(content: list, prompt, message_index: int = None):
                 )
             st.markdown(final_response)
         else:
-            st.markdown(final_response)
+            #st.markdown(final_response) - suppressing to remove the double messaging
+            st.markdown("")
 
         # Display SQL and Resultset if applicable
         if sql_statement != "Not Applicable":
@@ -574,7 +630,7 @@ def display_content_new(content: list, prompt, message_index: int = None):
 def get_member_details(phone_number):
     """
     Run a query to get member details and extract values
-    """ 
+    """
     query = f"""
         SELECT MEMBER_ID, NAME, 
         CASE WHEN POTENTIAL_CALLER_INTENT = 'Active Grievance' THEN POTENTIAL_CALLER_INTENT||':'||GRIEVANCE_TYPE
@@ -602,7 +658,10 @@ def get_member_details(phone_number):
 def on_phone_number_change():
     """
     Update session state if phone number is changed
-    """ 
+    """
+    # Force the 'Limit question only on selected member' toggle to be True
+    st.session_state['restricted_member_toggle'] = True
+    
     st.session_state.messages = [] #resetting messages
     phone_number = st.session_state.phone_number
     try:
@@ -634,7 +693,7 @@ def on_phone_number_change():
 def display_member_info():
     """
     Display member info and sample questions in Streamlit app
-    """ 
+    """
     st.markdown(
         """
         <style>
@@ -725,7 +784,8 @@ def display_member_info():
             unsafe_allow_html=True
         )
 
-        st.sidebar.toggle('Limit question only on selected member',key ='restricted_member_toggle',value = True)
+        st.sidebar.toggle('Limit question only on selected member',key ='restricted_member_toggle')
+        
         if st.session_state.restricted_member_toggle:
             st.session_state.restricted_member = True
         else:
@@ -960,15 +1020,21 @@ def main():
                             response_text = "No response received from Cortex AI."
 
                         message_placeholder.markdown(response_text)
-                        if intent == 'recordings':
-                            st.markdown("The following call recordings were referred for this answer:")
-                        else:
-                            st.markdown("The following documents were referred for this answer:")
-                        for _, row in df_document_urls.iterrows():
-                            relative_path = row['RELATIVE_PATH']
-                            url_link = row['URL_LINK']
-                            display_url = f"[{relative_path}]({url_link})"
-                            st.markdown(display_url)
+                        if not df_document_urls.empty:
+                            if intent == 'recordings':
+                                st.markdown("The following call recordings were referred for this answer:")
+                                for _, row in df_document_urls.iterrows():
+                                    relative_path = row['RELATIVE_PATH']
+                                    url_link = row['URL_LINK']
+                                    st.write(f"Call Recording : {relative_path}")
+                                    st.audio(url_link, format="audio/mpeg", loop=True)
+                                    #display_file_with_scrollbar(relative_path, unique_key=relative_path,file_type="audio")
+                            else:
+                                st.markdown("The following documents were referred for this answer:")
+                                for _, row in df_document_urls.iterrows():
+                                    relative_path = row['RELATIVE_PATH']
+                                    display_file_with_scrollbar(relative_path, unique_key=relative_path,file_type="pdf")
+
                 st.session_state.messages.append({"role": "assistant", "content": response_text})
 
     # Move Next Best Action as a checkbox under the chatbox
