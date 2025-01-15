@@ -131,7 +131,7 @@ def download_file_from_stage(relative_path: str) -> str:
     Returns the local file path.
     """
     local_dir = "/tmp/"  # or any temp directory
-    relative_path = relative_path.replace(r'call_recordings/', 'CALL_RECORDINGS/')
+    #relative_path = relative_path.replace(r'call_recordings/', 'CALL_RECORDINGS/')
     session.file.get(f"@{DATABASE}.{SCHEMA}.{STAGE}/{relative_path}", local_dir)
     local_file_path = os.path.join(local_dir, os.path.basename(relative_path))
     return local_file_path
@@ -1024,7 +1024,7 @@ def main():
                             if intent == 'recordings':
                                 st.markdown("The following call recordings were referred for this answer:")
                                 for _, row in df_document_urls.iterrows():
-                                    relative_path = row['RELATIVE_PATH']
+                                    relative_path = row['RELATIVE_PATH'].replace(r'call_recordings/', 'CALL_RECORDINGS/')
                                     url_link = row['URL_LINK']
                                     st.write(f"Call Recording : {relative_path}")
                                     st.audio(url_link, format="audio/mpeg", loop=True)
