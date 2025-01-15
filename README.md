@@ -6,8 +6,9 @@
 Contact Center is a critical business function for a Payer/Health Plan. There is heightened focus particularly with the growing market demand for customer centric experiences in Healthcare. Improving the operational efficiency of contact centers and reducing agent burnout are also key priorities for all enterprises.
 
 In this guide you will build:
-- A Snowflake Notebook on Container Runtime to process unstructured data (audio files and PDFs)
-- A Snowflake Notebook on Warehouse to build a Caller Intent ML Classification Model and execute predictions
+- A Snowflake Notebook on Container Runtime to:
+  - Process unstructured data (audio files and PDFs)
+  - Build a Caller Intent ML Classification Model and execute predictions
 - A chatbot application using Streamlit
 
 ## Step-By-Step Guide
