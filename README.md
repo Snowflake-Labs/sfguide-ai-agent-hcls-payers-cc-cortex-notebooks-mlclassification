@@ -12,4 +12,4 @@ In this guide you will build:
 - A chatbot application using Streamlit
 
 ## Step-By-Step Guide
-For prerequisites, setup, step-by-step guide and instructions, please refer to the [QuickStart Guide]().
+For prerequisites, setup, step-by-step guide and instructions, please refer to the [QuickStart Guide](https://quickstarts.snowflake.com/guide/ai_agent_health_payers_cc/index.html?index=..%2F..index#0).
