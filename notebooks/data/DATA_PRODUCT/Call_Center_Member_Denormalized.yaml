@@ -1,295 +1,535 @@
 name: CALL_CENTER_MEMBER_DENORMALIZED
-description: 'This semantic model can be used or asking member specific information from the perspective of what is relevant to a Call Center Representative'
+description: This semantic model can be used or asking member specific information from the perspective of what is relevant to a Call Center Representative
 tables:
-- name: CALL_CENTER_MEMBER_DENORMALIZED
-  description: 'A logical table capturing member specific information'
-  base_table:
-    database: PAYERS_CC_DB
-    schema: PAYERS_CC_SCHEMA
-    table: CALL_CENTER_MEMBER_DENORMALIZED
-  dimensions:
-  - name: MEMBER_ID
-    expr: MEMBER_ID
-    description: An identifier for a Member.
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - 'Member_Identifier'
-    - 'Member_Locator'
-  - name: NAME
-    expr: NAME
-    description: Name of the Member
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - 'Member_Name'
-  - name: GENDER
-    expr: GENDER
-    description: Gender of the member
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - Sex
-  - name: ADDRESS
-    expr: ADDRESS
-    description: Address of the member
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - Member Address
-  - name: MEMBER_PHONE
-    expr: MEMBER_PHONE
-    description: Phone number of the member. Please ensure this is used on for Member's phone number and never for Provider or PCP
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - Member_Contact
-    - Member_Phone
-  - name: PLAN_ID
-    expr: PLAN_ID
-    description: Plan identifier of the member
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - Plan Identifier
-  - name: PLAN_NAME
-    expr: PLAN_NAME
-    description: Plan name
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - Plan Name
-  - name: PCP
-    expr: PCP
-    description: Primary Care Physician Name
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - PCP
-    - PCP Name
-  - name: PCP_PHONE
-    expr: PCP_PHONE
-    description: Phone number of the PCP
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - PCP Contact
-    - PCP Phone
-  - name: PLAN_TYPE
-    expr: PLAN_TYPE
-    description: Identifies the type of Plan -  HMO, PPO, POS, EPO etc.
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - Plan Type
-  - name: SMOKER_IND
-    expr: SMOKER_IND
-    description: Indicates whether the member is a smoker or not.
-    data_type: BOOLEAN
-    unique: false
-    synonyms:
-    - Smoker Indicator
-  - name: LIFESTYLE_INFO
-    expr: LIFESTYLE_INFO
-    description: Provides information around member's lifestyle
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - Lifestyle Indicator
-  - name: CHRONIC_CONDITION
-    expr: CHRONIC_CONDITION
-    description: Providers information any chronic conditions that the member has
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - Chronic Condition
-  - name: GRIEVANCE_ID
-    expr: GRIEVANCE_ID
-    description: Identifies any recent grievance raised by the member
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - Grievance ID
-  - name: GRIEVANCE_TYPE
-    expr: GRIEVANCE_TYPE
-    description: Type of grievance. Please use an ilike operator against this field
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - Grievance Type
-    - Grievance Category
-  - name: GRIEVANCE_STATUS
-    expr: GRIEVANCE_STATUS
-    description: Status of the respective grievance. When closed out the value would be 'Resolved' and when active or open the value would be 'Pending' . Please use an ilike operator against this field
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - Grievance Status
-    - Grievance State
-  - name: CLAIM_ID
-    expr: CLAIM_ID
-    description: Identifies a claim raised by the member
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - Claim Identifier
-  - name: CLAIM_PROVIDER
-    expr: CLAIM_PROVIDER
-    description: Name of the service provider for the claim
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - Claim Service Provider
-    - Service Provider
-  - name: CLAIM_SERVICE
-    expr: CLAIM_SERVICE
-    description: Details of the specific service for which the claim is raised
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - Claim Service
-    - Service Type
-  - name: CLAIM_STATUS
-    expr: CLAIM_STATUS
-    description: Status of the claim. Values like OPEN, REJECTED,PENDED, PAID etc. Both Open and Pended status is considered active
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - Claim Status
-    - Status of the Claim
-  - name: POTENTIAL_CALLER_INTENT
-    expr: POTENTIAL_CALLER_INTENT
-    description: Denotes the most likely reason for this member to make a call to the Call Center
-    data_type: VARCHAR(16777216)
-    unique: false
-    synonyms:
-    - Potential Call Reason
-    - Potential Call Intent
-  time_dimensions:
-  - name: DOB
-    expr: DOB
-    description: Member's Date of Birth
-    unique: true
-    data_type: DATE
-    synonyms:
-    - Member DOB
-    - Member Date of Birth
-  - name: CVG_START_DATE
-    expr: CVG_START_DATE
-    description: Member's coverage start date
-    unique: true
-    data_type: DATE
-    synonyms:
-    - Coverage Start Date
-  - name: CVG_END_DATE
-    expr: CVG_END_DATE
-    description: Member's coverage end date 
-    unique: true
-    data_type: DATE
-    synonyms:
-    - Coverage End Date
-  - name: GRIEVANCE_DATE
-    expr: GRIEVANCE_DATE
-    description: Date on which the grievance was raised
-    unique: true
-    data_type: DATE
-    synonyms:
-    - Grievance Date
-    - Grievance Start Date
-    - Grievance Reported Date
-  - name: GRIEVANCE_RESOLUTION_DATE
-    expr: GRIEVANCE_RESOLUTION_DATE
-    description: Date on which the grievance was closed
-    unique: true
-    data_type: DATE
-    synonyms:
-    - Grievance Closed Date
-    - Grievance End Date
-    - Grievance Resolution Date
-  - name: CLAIM_SERVICE_FROM_DATE
-    expr: CLAIM_SERVICE_FROM_DATE
-    description: Date on which the service referred in claim was started
-    unique: true
-    data_type: DATE
-    synonyms:
-    - Claim Service From Date
-    - Service From Date
-    - Service Start Date
-    - Service Begin Date
-  - name: CLAIM_SERVICE_TO_DATE
-    expr: CLAIM_SERVICE_TO_DATE
-    description: Date on which the service referred in claim was ended
-    unique: true
-    data_type: DATE
-    synonyms:
-    - Claim Service To Date
-    - Service To Date
-    - Service End Date
-  - name: CLAIM_SUBMISSION_DATE
-    expr: CLAIM_SUBMISSION_DATE
-    description: Date on which the claim was submitted
-    unique: true
-    data_type: DATE
-    synonyms:
-    - Claim Submission Date
-    - Claim Open Date
-  - name: CLAIM_PAID_DATE
-    expr: CLAIM_PAID_DATE
-    description: Date on which the claim was paid
-    unique: true
-    data_type: DATE
-    synonyms:
-    - Claim Paid Date
-    - Paid Date
-  measures:
-  - name: Premium
-    description: The monthly premium amount due from the member
-    expr: PREMIUM
-    data_type: NUMBER
-    default_aggregation: sum
-    synonyms: 
-    - Premium amount
-  - name: CLAIM_BILL_AMT
-    description: The bill amount on the claim
-    expr: CLAIM_BILL_AMT
-    data_type: NUMBER
-    default_aggregation: sum
-    synonyms: 
-    - Claim Amount Billed
-    - Billed Amount
-  - name: CLAIM_ALLOW_AMT
-    description: The allowed amount on the claim after taking into account the payment contract with the respective provider
-    expr: CLAIM_ALLOW_AMT
-    data_type: NUMBER
-    default_aggregation: sum
-    synonyms: 
-    - Claim Amount Allowed
-    - Allowed Amount
-  - name: CLAIM_COPAY_AMT
-    description: The copay amount on the claim.
-    expr: CLAIM_COPAY_AMT
-    data_type: NUMBER
-    default_aggregation: sum
-    synonyms: 
-    - Copay Amount
-  - name: CLAIM_COINSURANCE_AMT
-    description: The co insurance amount on the claim.
-    expr: CLAIM_COINSURANCE_AMT
-    data_type: NUMBER
-    default_aggregation: sum
-    synonyms: 
-    - Coinsurance Amount
-  - name: CLAIM_DEDUCTIBLE_AMT
-    description: The deductible amount on the claim.
-    expr: CLAIM_DEDUCTIBLE_AMT
-    data_type: NUMBER
-    default_aggregation: sum
-    synonyms: 
-    - Deductible Amount
-  - name: CLAIM_PAID_AMT
-    description: The paid amount on the claim.
-    expr: CLAIM_PAID_AMT
-    data_type: NUMBER
-    default_aggregation: sum
-    synonyms: 
-    - Paid Amount
+  - name: CALL_CENTER_MEMBER_DENORMALIZED
+    description: A logical table capturing member specific information
+    base_table:
+      database: PAYERS_CC_DB
+      schema: PAYERS_CC_SCHEMA
+      table: CALL_CENTER_MEMBER_DENORMALIZED
+    dimensions:
+      - name: MEMBER_ID
+        expr: MEMBER_ID
+        description: An identifier for a Member.
+        data_type: VARCHAR(16777216)
+        unique: false
+        synonyms:
+          - Member_Identifier
+          - Member_Locator
+      - name: NAME
+        expr: NAME
+        description: Name of the Member
+        data_type: VARCHAR(16777216)
+        unique: false
+        synonyms:
+          - full_name
+          - member_name
+          - individual_name
+          - person_name
+          - member_full_name
+        sample_values:
+          - James Mills
+          - Christina Frey
+          - Donald Vincent
+      - name: GENDER
+        expr: GENDER
+        description: Gender of the member
+        data_type: VARCHAR(16777216)
+        unique: false
+        synonyms:
+          - sex
+          - male_female
+          - demographic
+          - biological_sex
+          - gender_identity
+        sample_values:
+          - Male
+          - Female
+      - name: ADDRESS
+        expr: ADDRESS
+        description: Address of the member
+        data_type: VARCHAR(16777216)
+        unique: false
+        synonyms:
+          - location
+          - residence
+          - mailing_address
+          - street_address
+          - physical_address
+          - home_address
+          - mailing_location
+        sample_values:
+          - 2685 Anna Station, Port Erica, OR 42506
+          - 054 Daniel Cliff Suite 634, Christineton, AK 72447
+          - 31778 Mays Plain, Bakerville, IN 74384
+      - name: MEMBER_PHONE
+        expr: MEMBER_PHONE
+        description: Phone number of the member. Please ensure this is used on for Member's phone number and never for Provider or PCP
+        data_type: VARCHAR(16777216)
+        unique: false
+        synonyms:
+          - member_contact_number
+          - phone_number
+          - member_telephone
+          - contact_phone
+          - personal_phone_number
+          - home_phone
+        sample_values:
+          - 946-081-0513
+          - 946-081-0522
+          - 946-081-0532
+      - name: PLAN_ID
+        expr: PLAN_ID
+        description: Plan identifier of the member
+        data_type: VARCHAR(16777216)
+        unique: false
+        synonyms:
+          - plan_identifier
+          - policy_id
+          - coverage_id
+          - health_plan_id
+          - insurance_plan_id
+          - plan_code
+          - policy_number
+        sample_values:
+          - PL12264
+          - PL22893
+          - PL57018
+      - name: PLAN_NAME
+        expr: PLAN_NAME
+        description: Plan name
+        data_type: VARCHAR(16777216)
+        unique: false
+        synonyms:
+          - plan_title
+          - insurance_plan_name
+          - policy_name
+          - coverage_name
+          - health_plan_name
+          - plan_description
+          - insurance_policy_name
+          - coverage_title
+        sample_values:
+          - Standard Health Plan
+          - Premium Health Plan
+          - Basic Health Plan
+      - name: PCP
+        expr: PCP
+        description: Primary Care Physician Name
+        data_type: VARCHAR(16777216)
+        unique: false
+        synonyms:
+          - primary_care_physician
+          - primary_care_doctor
+          - primary_care_provider
+          - personal_care_physician
+          - personal_doctor
+        sample_values:
+          - Joshua Mills
+          - Jesse Roman
+          - Christopher Bauer DDS
+      - name: PCP_PHONE
+        expr: PCP_PHONE
+        description: Phone number of the PCP
+        data_type: VARCHAR(16777216)
+        unique: false
+        synonyms:
+          - primary_care_physician_phone
+          - doctor_phone
+          - physician_contact_number
+          - pcp_contact_info
+          - primary_doctor_phone_number
+        sample_values:
+          - 355-141-2019
+          - 355-141-2028
+          - 355-141-2038
+      - name: PLAN_TYPE
+        expr: PLAN_TYPE
+        description: Identifies the type of Plan -  HMO, PPO, POS, EPO etc.
+        data_type: VARCHAR(16777216)
+        unique: false
+        synonyms:
+          - plan_category
+          - coverage_type
+          - insurance_plan
+          - plan_classification
+          - policy_type
+          - coverage_classification
+          - benefit_plan
+          - plan_description
+        sample_values:
+          - PPO
+          - HMO
+          - EPO
+      - name: GRIEVANCE_ID
+        expr: GRIEVANCE_ID
+        description: Identifies any recent grievance raised by the member
+        data_type: VARCHAR(16777216)
+        unique: false
+        synonyms:
+          - complaint_id
+          - issue_id
+          - concern_id
+          - dispute_id
+          - appeal_id
+          - grievance_reference
+          - case_id
+          - incident_id
+        sample_values:
+          - G743071
+          - G581058
+          - G580488
+      - name: GRIEVANCE_TYPE
+        expr: GRIEVANCE_TYPE
+        description: Type of grievance. Please use an ilike operator against this field
+        data_type: VARCHAR(16777216)
+        unique: false
+        synonyms:
+          - complaint_type
+          - issue_category
+          - grievance_category
+          - concern_type
+          - dispute_type
+          - complaint_classification
+        sample_values:
+          - Incorrect billing
+          - Inadequate Care
+      - name: GRIEVANCE_STATUS
+        expr: GRIEVANCE_STATUS
+        description: Status of the respective grievance. When closed out the value would be 'Resolved' and when active or open the value would be 'Pending' . Please use an ilike operator against this field
+        data_type: VARCHAR(16777216)
+        unique: false
+        synonyms:
+          - grievance_resolution
+          - grievance_outcome
+          - complaint_status
+          - issue_resolution_status
+          - dispute_status
+          - grievance_result
+          - complaint_outcome
+          - issue_status
+        sample_values:
+          - Resolved
+          - Pending
+      - name: CLAIM_ID
+        expr: CLAIM_ID
+        description: Identifies a claim raised by the member
+        data_type: VARCHAR(16777216)
+        unique: false
+        synonyms:
+          - claim_number
+          - claim_reference
+          - claim_identifier
+          - claim_code
+          - invoice_id
+          - bill_id
+          - transaction_id
+          - payment_id
+        sample_values:
+          - C066210
+          - C179414
+          - C661661
+      - name: CLAIM_PROVIDER
+        expr: CLAIM_PROVIDER
+        description: Name of the service provider for the claim
+        data_type: VARCHAR(16777216)
+        unique: false
+        synonyms:
+          - healthcare_provider
+          - claim_vendor
+          - medical_service_provider
+          - claim_supplier
+          - insurance_claim_provider
+          - claim_payer
+          - medical_bill_provider
+          - claim_submitter
+        sample_values:
+          - Baker, Clark and Kent
+          - Burns LLC
+          - West-Robertson
+      - name: CLAIM_SERVICE
+        expr: CLAIM_SERVICE
+        description: Details of the specific service for which the claim is raised
+        data_type: VARCHAR(16777216)
+        unique: false
+        synonyms:
+          - medical_service
+          - healthcare_service
+          - claim_type
+          - service_rendered
+          - medical_procedure
+          - healthcare_procedure
+          - claim_category
+          - service_category
+        sample_values:
+          - Annual Physical Exam
+          - Outpatient Surgery
+          - Inpatient Stay
+      - name: CLAIM_STATUS
+        expr: CLAIM_STATUS
+        description: Status of the claim. Values like OPEN, REJECTED,PENDED, PAID etc. Both Open and Pended status is considered active
+        data_type: VARCHAR(16777216)
+        unique: false
+        synonyms:
+          - claim_outcome
+          - claim_resolution
+          - claim_disposition
+          - claim_result
+          - claim_decision
+          - claim_settlement_status
+        sample_values:
+          - PAID
+          - OPEN
+          - PENDED
+    time_dimensions:
+      - name: DOB
+        expr: DOB
+        description: Member's Date of Birth
+        unique: true
+        data_type: DATE
+        synonyms:
+          - date_of_birth
+          - birth_date
+          - birthdate
+          - dob_date
+          - birthday
+        sample_values:
+          - '2001-04-23'
+          - '2002-08-24'
+          - '2004-08-07'
+      - name: CVG_START_DATE
+        expr: CVG_START_DATE
+        description: Member's coverage start date
+        unique: true
+        data_type: DATE
+        synonyms:
+          - effective_date
+          - coverage_begin_date
+          - start_of_coverage
+          - policy_start_date
+          - coverage_initiation_date
+          - enrollment_start_date
+        sample_values:
+          - '2022-10-08'
+          - '2023-06-07'
+          - '2022-08-05'
+      - name: CVG_END_DATE
+        expr: CVG_END_DATE
+        description: Member's coverage end date
+        unique: true
+        data_type: DATE
+        synonyms:
+          - coverage_end_date
+          - policy_end_date
+          - insurance_end_date
+          - benefit_end_date
+          - coverage_termination_date
+        sample_values:
+          - '2099-12-31'
+      - name: GRIEVANCE_DATE
+        expr: GRIEVANCE_DATE
+        description: Date on which the grievance was raised
+        unique: true
+        data_type: DATE
+        synonyms:
+          - grievance_filed_date
+          - grievance_submission_date
+          - grievance_received_date
+          - grievance_logged_date
+          - complaint_date
+        sample_values:
+          - '2023-09-14'
+          - '2023-11-25'
+          - '2024-04-24'
+      - name: GRIEVANCE_RESOLUTION_DATE
+        expr: GRIEVANCE_RESOLUTION_DATE
+        description: Date on which the grievance was closed
+        unique: true
+        data_type: DATE
+        synonyms:
+          - grievance_closure_date
+          - issue_resolution_date
+          - complaint_resolution_date
+          - dispute_resolution_date
+          - grievance_settlement_date
+          - resolution_completion_date
+        sample_values:
+          - '2023-09-29'
+          - '2024-01-17'
+      - name: CLAIM_SERVICE_FROM_DATE
+        expr: CLAIM_SERVICE_FROM_DATE
+        description: Date on which the service referred in claim was started
+        unique: true
+        data_type: DATE
+        synonyms:
+          - service_start_date
+          - claim_begin_date
+          - claim_initiation_date
+          - service_initiation_date
+          - claim_from_date
+          - start_of_service_date
+          - date_of_service_start
+        sample_values:
+          - '2024-01-08'
+          - '2023-08-03'
+          - '2023-07-28'
+      - name: CLAIM_SERVICE_TO_DATE
+        expr: CLAIM_SERVICE_TO_DATE
+        description: Date on which the service referred in claim was ended
+        unique: true
+        data_type: DATE
+        synonyms:
+          - service_end_date
+          - claim_end_date
+          - claim_service_end
+          - claim_completion_date
+          - service_completion_date
+          - claim_service_termination_date
+        sample_values:
+          - '2024-01-08'
+          - '2023-08-03'
+          - '2023-08-12'
+      - name: CLAIM_SUBMISSION_DATE
+        expr: CLAIM_SUBMISSION_DATE
+        description: Date on which the claim was submitted
+        unique: true
+        data_type: DATE
+        synonyms:
+          - claim_filing_date
+          - claim_submission_timestamp
+          - date_claim_submitted
+          - claim_received_date
+          - claim_registration_date
+        sample_values:
+          - '2024-01-13'
+          - '2024-01-19'
+          - '2023-08-08'
+      - name: CLAIM_PAID_DATE
+        expr: CLAIM_PAID_DATE
+        description: Date on which the claim was paid
+        unique: true
+        data_type: DATE
+        synonyms:
+          - payment_date
+          - settlement_date
+          - claim_settlement_date
+          - date_of_payment
+          - payment_processing_date
+          - claim_payment_date
+          - paid_date
+        sample_values:
+          - '2024-02-07'
+          - '2024-02-13'
+          - '2023-09-02'
+    facts:
+      - name: Premium
+        description: The monthly premium amount due from the member
+        expr: PREMIUM
+        data_type: NUMBER
+        default_aggregation: sum
+        synonyms:
+          - Premium amount
+      - name: CLAIM_BILL_AMT
+        description: The bill amount on the claim
+        expr: CLAIM_BILL_AMT
+        data_type: NUMBER
+        default_aggregation: sum
+        synonyms:
+          - billed_amount
+          - claim_total
+          - invoice_amount
+          - billed_claim_amount
+          - total_bill
+          - claim_invoice
+          - amount_billed
+        sample_values:
+          - '4619'
+          - '9848'
+          - '9975'
+      - name: CLAIM_ALLOW_AMT
+        description: The allowed amount on the claim after taking into account the payment contract with the respective provider
+        expr: CLAIM_ALLOW_AMT
+        data_type: NUMBER
+        default_aggregation: sum
+        synonyms:
+          - approved_claim_amount
+          - allowed_claim_amount
+          - claim_payment_amount
+          - reimbursed_amount
+          - covered_claim_amount
+          - claim_reimbursement
+          - allowed_amount
+          - approved_amount
+        sample_values:
+          - '2771'
+          - '5909'
+          - '5985'
+      - name: CLAIM_COPAY_AMT
+        description: The copay amount on the claim.
+        expr: CLAIM_COPAY_AMT
+        data_type: NUMBER
+        default_aggregation: sum
+        synonyms:
+          - copayment_amount
+          - copay
+          - patient_copayment
+          - copayment_cost
+          - patient_cost_share
+          - copay_amount
+          - out_of_pocket_copay
+        sample_values:
+          - '15'
+          - '30'
+      - name: CLAIM_COINSURANCE_AMT
+        description: The co insurance amount on the claim.
+        expr: CLAIM_COINSURANCE_AMT
+        data_type: NUMBER
+        default_aggregation: sum
+        synonyms:
+          - coinsurance_amount
+          - coinsurance_payment
+          - coinsurance_cost
+          - shared_insurance_cost
+          - shared_coverage_amount
+        sample_values:
+          - '277'
+          - '591'
+          - '668'
+      - name: CLAIM_DEDUCTIBLE_AMT
+        description: The deductible amount on the claim.
+        expr: CLAIM_DEDUCTIBLE_AMT
+        data_type: NUMBER
+        default_aggregation: sum
+        synonyms:
+          - deductible_amount
+          - claim_deductible
+          - deductible_payment
+          - deductible_cost
+          - out_of_pocket_deductible
+          - deductible_expense
+        sample_values:
+          - '1000'
+      - name: CLAIM_PAID_AMT
+        description: The paid amount on the claim.
+        expr: CLAIM_PAID_AMT
+        data_type: NUMBER
+        default_aggregation: sum
+        synonyms:
+          - amount_paid
+          - paid_claim_amount
+          - claim_reimbursement
+          - claim_settlement
+          - payment_made
+          - claim_disbursement
+          - reimbursement_amount
+          - paid_amount
+        sample_values:
+          - '1479'
+          - '4303'
+          - '4371'
+custom_instructions: |-
+  1)Always use a DISTINCT clause when retrieving the final results
+    For e.g.
+    Instead of SELECT A,B,C  use SELECT DISTINCT A,B,C
+
+  2)  Reject questions that are related to calls made by a member
