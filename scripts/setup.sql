@@ -177,3 +177,9 @@ ENCRYPTION=(TYPE='SNOWFLAKE_SSE'); --to store data assets
 -- MAIN_FILE = 'payer_assistant.py'
 -- QUERY_WAREHOUSE = 'PAYERS_CC_WH'
 -- COMMENT = '{"origin":"sf_sit-is", "name":"payer_call_center_assistant_v2", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"streamlit"}}';
+
+-- CREATE OR REPLACE STREAMLIT PAYERS_CC_CHATBOT_OLD
+-- ROOT_LOCATION = '@PAYERS_CC_DB.PAYERS_CC_SCHEMA.CHATBOT_APP'
+-- MAIN_FILE = 'payer_assistant_old.py'
+-- QUERY_WAREHOUSE = 'PAYERS_CC_WH'
+-- COMMENT = '{"origin":"sf_sit-is", "name":"payer_call_center_assistant_v2", "version":{"major":1, "minor":0}, "attributes":{"is_quickstart":1, "source":"streamlit"}}';
