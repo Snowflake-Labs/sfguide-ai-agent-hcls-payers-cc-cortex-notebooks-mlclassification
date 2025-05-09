@@ -21,7 +21,7 @@ pd.set_option('display.max_rows', None)
 DATABASE = session.get_current_database()
 SCHEMA = session.get_current_schema()
 STAGE = "RAW_DATA"
-FILE = "DATA_PRODUCT/contact_center_data_product_semantic_model_v2.yaml"
+FILE = "DATA_PRODUCT/Call_Center_Member_Denormalized.yaml"
 API_ENDPOINT = "/api/v2/cortex/agent:run"
 API_TIMEOUT = 50000  # in milliseconds
 MAX_DATAFRAME_ROWS = 1000
