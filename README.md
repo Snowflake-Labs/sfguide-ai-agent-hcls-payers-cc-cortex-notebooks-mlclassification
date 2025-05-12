@@ -9,6 +9,7 @@ In this guide you will build:
 - A Snowflake Notebook on Container Runtime to:
   - Process unstructured data (audio files and PDFs)
   - Build a Caller Intent ML Classification Model and execute predictions
+- A Cortex Agent to orchestrate across both structured and unstructured data sources to deliver insights
 - A chatbot application using Streamlit
 
 ## Step-By-Step Guide
