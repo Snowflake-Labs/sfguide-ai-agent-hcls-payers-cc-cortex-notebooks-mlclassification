@@ -71,6 +71,7 @@ def config_options():
         st.session_state.pop('edited_subject', None)
         st.session_state.pop('edited_body', None)
         st.session_state.pop('trigger_action', None)
+        st.session_state.pop('user_email', None)
 
         st.sidebar.success("Conversation and selections have been reset.")
 
@@ -985,6 +986,7 @@ def send_email(recipient_email, subject, body):
              ?,
             ?
             );"""
+    session.sql(cmd, params=[recipient_email, subject, body]).collect()
     try:
         session.sql(cmd, params=[recipient_email, subject, body]).collect()
         st.success("Email sent successfully!")
@@ -1115,22 +1117,22 @@ def main():
                             edited_subject = st.text_input("Edit the Subject:", value=subject)
                             edited_body = st.text_area("Edit the Email Body:", value=body, height=300)
 
-                            # When the button is clicked, set the flag and store the edited values
                             if st.button("Trigger Action"):
-                                st.session_state.trigger_action = True
-                                st.session_state.edited_subject = edited_subject
-                                st.session_state.edited_body = edited_body
+                                user_email = st.session_state.get('user_email', '').strip()
+                                if not user_email or '@' not in user_email:
+                                    st.warning("Please enter a valid email address in the sidebar before triggering the email.")
+                                    st.session_state.trigger_action = False
+                                else:
+                                    st.session_state.trigger_action = True
+                                    st.session_state.edited_subject = edited_subject
+                                    st.session_state.edited_body = edited_body
 
                             # Check if the action should be performed
-                            if st.session_state.trigger_action:
-                                #with st.spinner("Action in progress..."):
+                            if st.session_state.get('trigger_action', False):
                                 send_email(st.session_state.user_email, st.session_state.edited_subject, st.session_state.edited_body)
-                                # Reset the flag after action is complete
                                 st.session_state.trigger_action = False
-                                # Store the edited email if needed
                                 st.session_state['edited_subject'] = st.session_state.edited_subject
                                 st.session_state['edited_body'] = st.session_state.edited_body 
-                            
 
 if __name__ == "__main__":
     main()
