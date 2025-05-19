@@ -204,9 +204,9 @@ def display_file_with_scrollbar(relative_path: str, file_type: str = "pdf", uniq
             st.image(presigned_url)        
         elif file_type == "audio":
             # Instead of downloading file, get presigned URL directly
+            relative_path = relative_path.replace(r'call_recordings/', 'CALL_RECORDINGS/').  # new line
             st.write(relative_path)
             presigned_url = get_presigned_url(relative_path, expire_seconds=600)  # e.g. 10 mins
-            st.audio(presigned_url, format="audio/mpeg")
         else:
             st.warning(f"File type '{file_type}' not supported for preview.")
 
